@@ -10,8 +10,12 @@ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-availab
 
 ````
 **open /etc/apache2/sites-available/threads.conf (in root previlage)**
+
+
 iam setting up threads folder in home directory.
-change <username> accordingly.
+
+
+change **<username>** accordingly.
 ```html
 <VirtualHost *:8000>
     ServerAdmin webmaster@localhost
