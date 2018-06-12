@@ -2,12 +2,15 @@
   
   <body>
     
+     <?php
+    include 'header.php';
     
+    ?>
     
     <h1>Admin panel</h1>
  
     <table>
-     <tr> <th>Edition</th><th>delete?</th><th>edit?</th></tr>
+     <tr> <th>Edition</th><th>EDIT?</th><th>DELETE?</th></tr>
    
     <?php
       include '../common/con.php';
@@ -21,7 +24,7 @@ if ($result->num_rows > 0) {
       ?>
     
     <tr><td><?php echo $row['name'] ?></td><td><a href="editedition.php?id=<?php echo  $row['id'] ?>" >EDIT</a></td>
-      <td><a ><td><a href="deledition.php?id=<?php echo $row['id'] ;?>" >DELETE</a></td>
+     <td><a href="deledition.php?id=<?php echo $row['id'] ;?>" >DELETE</a></td>
          </tr>
     
     
@@ -36,14 +39,11 @@ if ($result->num_rows > 0) {
     
    
     
-    <ul>
-     
-      <li>
+   <div class="button">
         <a href="addedition.php">Add Edition</a> 
+   
+    </div>
         
-       </li>
-     
-     </ul>
-      
+<?php include 'footer.php';?>
   </body>
 </html>

@@ -8,6 +8,9 @@ include '../common/con.php';
 $sql = "DELETE FROM `edition` WHERE id='$id'";
   
 $result = $conn->query($sql);
+  $sql = "DELETE FROM `Articles` WHERE editionid='$id'";
+  
+$result = $conn->query($sql);
  $conn->close();
  
   

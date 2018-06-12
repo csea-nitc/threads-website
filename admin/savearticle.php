@@ -13,11 +13,10 @@ $sql = "INSERT INTO `Articles`( `editionid`, `title`, `content`, `authorname`, `
  }
 else{
   
-  $sql = "UPDATE `Articles` SET `title`=$title,`content`=$content,`authorname`=$aname,`authorshortbio`=$abio,`authorphoto`='$photourl' WHERE id=$_POST['aid']";
-
+  $sql = "UPDATE Articles SET title='$title',content='$content',authorname='$aname',authorshortbio='$abio',authorphoto='$photourl' WHERE id=".$_POST['aid'];
 }
 $result = $conn->query($sql);
-
+var_dump($result);
 $conn->close();
 
 

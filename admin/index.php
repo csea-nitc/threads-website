@@ -20,10 +20,11 @@ $result = $conn->query($sql);
  
 if ($result->num_rows > 0) {
   //redirect to manage.php adminpage
+  session_start();
   header('Location:manage.php');
   
-  
-  
+  $_SESSION['isadmin']="true";
+ 
   
   
 }
@@ -63,7 +64,11 @@ else{
       <input type="submit" value="Login"></input>
       
     </form>
-  </body>
+<?php
+  include 'footer.php';
+  
+?>
+</body>
 </html>
 
 <?php

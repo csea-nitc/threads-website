@@ -7,17 +7,18 @@ $abio="";
 $aval="";
 
 $photourl="";
-
+include 'header.php';
 
 if(isset($_GET['id']))
 {
   
  include '../common/con.php';
   
- 
-$sql = "SELECT * from articles where id=$id";
+ $id=$_GET['id'];
+$sql = "SELECT * from Articles where id=$id";
   
 $result = $conn->query($sql);
+  
   $row=$result->fetch_assoc();
   
   $titleval=$row['title'];
@@ -80,7 +81,8 @@ $result = $conn->query($sql);
   
 
         },function( data ) {
-          console.log(data);
+         // console.log(data);
+        // alert(data);
     window.location.href = '/admin/editedition.php?id=<?php echo $_GET['eid']; ?>';
   });
       }
@@ -93,19 +95,20 @@ $result = $conn->query($sql);
     </script>
     
     <h1>
-       Article 
+       Add Article
     </h1>
-    <input type="text" id="titlebox" placeholder="Title" value="<?php echo $titleval;?>"></input>
+    Title:<input type="text" id="titlebox" placeholder="Title" value="<?php echo $titleval;?>"></input><br>
   
-    <input type="text" id="authorname" placeholder="Author" value="<?php echo $aval;?>"></input>
-  <input type="text" id="authorbio" placeholder="AuthorBio" value="<?php echo $abio;?>"></input>
-<input type="text" id="photourl" placeholder="paste author phhoto url " value="<?php echo $photourl;?>"></input>
+   Author:<input type="text" id="authorname" placeholder="Author" value="<?php echo $aval;?>"></input><br>
+  Author Bio:<input type="text" id="authorbio" placeholder="AuthorBio" value="<?php echo $abio;?>"></input><br>
+Photo-Url:<input type="text" id="photourl" placeholder="paste author phhoto url " value="<?php echo $photourl;?>"></input><br>
     <div class="code">
-      <textarea id="htmlsource" value= "<?php echo $contentval;?>">
+    post content(HTML):
+      <textarea id="htmlsource">
+      <?php echo $contentval;?>
       
       
-      
-      </textarea>
+      </textarea><br>
       
       <input type="button" onclick="refreshrender();" value="preview"/>
      <input type="button" onclick="savearticle();" value="Save"/>
@@ -132,6 +135,7 @@ $result = $conn->query($sql);
     
     
     
+<?php include 'footer.php';?>
     
   </body>
 </html>

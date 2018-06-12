@@ -38,8 +38,12 @@ else{
   
   <body>
     <h1>
-      Admin Login
+      Create Edition
     </h1>
+     <?php
+    include 'header.php';
+    
+    ?>
     
     <form action="addedition.php" method="POST">
       Edition NAme:<input type="text" name="name" required><br>
@@ -48,6 +52,9 @@ else{
       
     </form>
   </body>
+
+
+<?php include 'footer.php';?>
 </html>
 
 <?php
