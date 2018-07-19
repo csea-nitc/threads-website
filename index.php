@@ -15,7 +15,7 @@
   include 'common/con.php';
   
  
-$sql = "SELECT * FROM  edition where visibility=1";
+$sql = "SELECT * FROM  edition where visible=1";
 $result = $conn->query($sql);
 
 while($row=$result->fetch_assoc())

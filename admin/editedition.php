@@ -4,11 +4,14 @@
     
     <?php
     include 'header.php';
-    
+    $id=$_GET['id'];
     ?>
     
     <h1>Edit Edition</h1>
- 
+ <a href="reorderarticles.php?id=<?php echo $id; ?>" >Reorder articles</a>
+ <a href="uploadform.php?id=<?php echo $id; ?>" >Upload Resources</a>
+    
+    
     <table>
      <tr> <th>Title</th><th>Author Name</th><th>delete?</th><th>edit?</th></tr>
    

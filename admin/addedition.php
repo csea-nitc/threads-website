@@ -11,9 +11,19 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   
   
   $username=$_POST['name'];
-   
+   $edname=str_replace(' ', '', $username);
+ var_dump( mkdir("../assets/$edname"));
   
+  mkdir("../assets/$edname/images");
+  
+  mkdir("../assets/$edname/videos");
+  
+  
+  mkdir("../assets/$edname/documents");
+  
+  mkdir("../assets/$edname/others");
 // getting query from db
+  
 $sql = "INSERT INTO `edition`( `name`) VALUES ('".$username."')";
   
 $result = $conn->query($sql);
