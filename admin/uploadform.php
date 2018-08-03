@@ -16,10 +16,17 @@ if(isset($_POST["submit"])) {
   $result=$conn->query($sql);
   $row= $result->fetch_assoc();
   $editionfolder= str_replace(' ', '', $row["name"]);
-  $target_dir = "/assets/".$editionfolder; // generatye from edition name
+  $sqlfile="assets/".$editionfolder;
+  $target_dir = "../assets/".$editionfolder; // generatye from edition name
   if($type=="Image")
   {
     $subfolder="/images/";
+  }
+  else if($type=="magpdf")
+  {
+    $subfolder="/pdfs/";
+    
+    
   }
   else if($type=="Video"){
     
@@ -35,11 +42,14 @@ $target_file = $target_dir.$subfolder. basename($_FILES["fileToUpload"]["name"])
   
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     
-  $filepath=$target_file;
+  $filepath= $sqlfile.$subfolder. basename($_FILES["fileToUpload"]["name"]);
     
     
-     $sql="INSERT INTO `uploads`(`path`, `edid`, `name`, `type`) VALUES ($filepath,$edid,$name,$type)";
+     $sql="INSERT INTO `uploads`(`path`, `edid`, `name`, `type`) VALUES ('$filepath',$edid,'$name','$type')";
+   
   $conn->query($sql);
+    header("Location:manage.php");
+    die();
     
   
   } else {
@@ -90,6 +100,8 @@ if ($result->num_rows > 0) {
   Type:
   <input type="radio" name="type" value="Image" checked>Images<br>
   <input type="radio" name="type" value="Video"> Videos<br>
+ <input type="radio" name="type" value="magpdf"> Magazine PDF<br>
+   
   <input type="radio" name="type" value="Other"> Other<br><br>
   <input type="hidden" name="edid" value="<?php echo $_GET["id"]; ?>" >
     Select image to upload:

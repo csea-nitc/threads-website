@@ -4,7 +4,7 @@
 include '../common/con.php';
   
 $id=$_GET['id'];
-$sql="SELECT * FROM edition where visible=1 order by id desc";
+$sql="SELECT * FROM edition where visible=1";
 $edit=$conn->query($sql);  
 
 
@@ -28,6 +28,7 @@ $cureditrow=$curedit->fetch_assoc();
 		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 	<link href="/styles/post.css" rel="stylesheet"> 
+        <link href="/styles/v-style.css" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
@@ -39,24 +40,26 @@ $cureditrow=$curedit->fetch_assoc();
 	
 		<body>
 		<!-- <div class="header">-->
-
-	<div class="col l12">
+<div class="row threads-ribbon" style="background : url('/styles/topbar.png'); background-size:cover; ">
+	<div class="col l12 m12 s12">
  
-										<img class="l12 threads-ribbon" src="/styles/topbar.png"/> 
+										<!--<img class="threads-ribbon" style="background-size:cover" src="/styles/topbar.png"/>--> 
 			
 		<img class="responsive-img threads-logo" src="/styles/threads-logo.png">
 		</div>
+	</div>
 			
- 
+
 <div class="row">
+	<div class="container">
 	
-		<div class="col s2 offset-s1">
+		<div class="col s2 l2 m2">
 									<div class="row">
 									
 										<div id="article-nav">
 															
 																<div class="editiontitle" id="editiontitle">ARTICLES </div>
-                                  
+
 										</div>
 
 	
@@ -65,29 +68,17 @@ $cureditrow=$curedit->fetch_assoc();
 									<div class="row">
 
 									<div id="edition-nav">
-								      <!-- Dropdown Trigger -->
-  <a class='dropdown-trigger btn editiontitle grey darken-2' href='#' data-target='dropdown1'>Editions</a>
-                     <!-- Dropdown Structure -->
+								      
+  <a class='dropdown-trigger btn editiontitle' href='#' data-target='dropdown1'>Editions</a>
+                     
                      
   <ul id="dropdown1" class="dropdown-content">
 																<?php 
-    $i=0;
 																while($w=$edit->fetch_assoc())
 																{
-                                  
-                                  if($i==0)
-                                  {
-                                    $curname=substr($w["name"],0,3);
-                                    $curyear=$w["year"];
-                                    $i=1;
-                                  }
-                                  $curid=$w["id"];
-                                  $cname=$w["name"];
-                                  $cyear=$w["year"];
 																			?>
-                                  
-    <li onclick="initpage(<?php echo $curid; ?>,-1,true,this.getAttribute('edname'),this.getAttribute('eyear'));" edname="<?php echo  substr($cname,0,3);; ?>" eyear="<?php echo  $cyear; ?>"><a href="#!"><?php  echo $w["name"];	?></a></li>
-    
+    <li><a href="#!"><?php  echo $w["name"];	?></a></li>
+										
   
         
 												
@@ -102,17 +93,17 @@ $cureditrow=$curedit->fetch_assoc();
 									</div>
 
 									</div>
-									</div>
+		</div>
 
-	<div class="col s8">
+	<div class="col l10 m10 s10">
 				<div class="row">
 					
 					<div class="col offset-s6 s4">
 						<div class="edyear">
 							
-						<span class="top-edition-text" id="top-edition-text">AUG</span>
+						<span class="top-edition-text">AUG</span>
 										<span class="top-edition-text">.</span>
-						<span class="top-edition-year-text" id="top-edition-year">2018</span>
+						<span class="top-edition-year-text">2018</span>
 				
 						</div>
 						</div>
@@ -144,49 +135,41 @@ $cureditrow=$curedit->fetch_assoc();
 
 		</div>
 	</div>
+	</div>
 	
 
-<div class="z-depth-2 newfooter" style="background : url('/webimages/bottombar.png'); background-size:cover; ">
-  <div class='container row show-on-large hide-on-med-and-down ' style='padding-top:1%;padding-bottom:1%; ' >
-   
-      <div class="col m6 s6">
-        <img class="responsive-img" src="/webimages/About.png">
-        <img class="responsive-img" src="/webimages/CSEA.png">
-        <img class="responsive-img" src="/webimages/CSED.png">
-      </div>
-          <div class="col m3 s12">
-        <img class="responsive-img" src="/webimages/copyright.png">
-    </div>
-      <div class="col m1 s6">
-        <img class="responsive-img" src="/webimages/csea-logo.png">
-    </div>
-      <div class="col m1 s6">
-         <img class="responsive-img" src="/webimages/CSED-logo.png">
-      </div>
-  </div>
-  
-  
-   <div class='container row show-on-medium-and-down hide-on-large-only' style='padding-top:1%;padding-bottom:1%; margin:0 auto;' >
-   
-      <div class="col m12 s12" >
-        <img class="responsive-img" src="/webimages/About.png" style='padding:2px;'>
-        <img class="responsive-img" src="/webimages/CSEA.png" style='padding:2px;'>
-        <img class="responsive-img" src="/webimages/CSED.png" style='padding:2px;'>
-      </div>
-     
-     
-              <div class="col m1 s3 offset-s2">
-        <img class="responsive-img" src="/webimages/csea-logo.png">
-    </div>
-      <div class="col m1 s3 offset-s2">
-         <img class="responsive-img" src="/webimages/CSED-logo.png">
-      </div>
-       <div class="col m3 s12" style='padding:3px;bottom:10px; margin: 1px auto;'>
-        <img class="responsive-img" src="/webimages/copyright.png">
-    </div>
+<div class="row" style="background : url('/webimages/bottombar.png'); background-size:cover; ">
+  <div class="container" style="padding-top:1%;padding-bottom:3%; " >
 
+      <div class="col l4 m6 s12 center">
+        <img class="responsive-img col s4" src="/webimages/About.png" style="padding:1px;" >
+        <img class="responsive-img col s4" src="/webimages/CSEA.png" style="padding:1px;">
+        <img class="responsive-img col s4" src="/webimages/CSED.png" style="padding:1px;">
+      </div>
+      <div class="col l4 m6 s12 center" >
+        <h4 style="font-family:'webfontregular'; font-weight:350; color: #FFFFFF; font-size:49.5px;">threads.</h4>
+      </div>
+		<div class="col l4 m6 s12 center">
+		<div class="">
+      <div class="col s6">
+        <img class="responsive-img" src="/webimages/csea-logo.png">
+      </div>
+      <div class="col s6">
+         <img class="responsive-img" src="/webimages/CSED-logo.png">
+		</div>
+			</div>
+		</div>
+	</div>
+      <div class="col s12">
+        <br>
+        <hr>
+      </div>
+      <div class="col l12 m12 s12 center">
+				<img class="responsive-img" src="/webimages/copyright.png">
+        </div>
   </div>
-    </div>
+  </div>
+    
 
 		<script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -217,9 +200,6 @@ $cureditrow=$curedit->fetch_assoc();
 			}*/
 
 			function loadarticle(id) {
-        $('.dropdown-btn-selected').removeClass().addClass("dropdown-btn");
-        $('[eid='+id+']').removeClass();
-        $('[eid='+id+']').addClass("dropdown-btn-selected")
 				/*
   
 				<div class="article" id="article">
@@ -240,7 +220,7 @@ $cureditrow=$curedit->fetch_assoc();
 				*/
  
 				$.get("/getarticle.php?id=" + id, function(data) {
-  
+
 					var article = JSON.parse(data);
 
 					var i;
@@ -268,14 +248,8 @@ $cureditrow=$curedit->fetch_assoc();
 				
 			
 			}
-			function loadarticlelist(id,loadfirstarticle) {
+			function loadarticlelist(id) {
 			 
-        
-      
-        
-        
-        $('.dropdown-btn').remove();
-         $('.dropdown-btn-selected').remove();
 			
 				$.get("../getarticlelist.php?id=" + id, function(data) {
 
@@ -285,14 +259,9 @@ $cureditrow=$curedit->fetch_assoc();
 
 					 
 					for (i = 0; i < articles.length; i++) { 
-						var title = $(document.createElement('div')).attr({eid:articles[i].id,onclick:"loadarticle("+articles[i].id+");"});
-						if(loadfirstarticle&&i==0){
-            title.addClass("dropdown-btn-selected");
-              loadarticle(articles[i].id);
-            }
-              else{title.addClass("dropdown-btn");
-            }
-            
+						var title = $(document.createElement('button'),);
+						title.addClass("dropdown-btn");
+						
 						title.html(articles[i].title);
 						$('#article-nav').append(title);
 		
@@ -304,30 +273,28 @@ $cureditrow=$curedit->fetch_assoc();
 
 
 			}
-      
 		 function selectarticle(idd)
 			{
-         
 				 loadarticle(idd)
 				
 			}
-		
-			
-			function initpage(editionid,articleid,loadfirstarticle,edname,edyear)
+			function selectedition(idd)
 			{
-      
-        $('#top-edition-text').html(edname);
-        $('#top-edition-year').html(edyear);
+				loadarticlelist(idd)
 				
-        loadarticlelist(editionid,loadfirstarticle);
-        if(loadfirstarticle==false){
-				          selectarticle(articleid);
-				}
+				
+			}
+			
+			function initpage(editionid,articleid)
+			{
+				 selectedition(editionid);
+				selectarticle(articleid)
+				
+				
+				
 			}
 			$( document ).ready(function() {
-     
-        //load firstg current edition
-        initpage(10,11,false,"<?php echo $curname; ?>","<?php echo $curyear; ?>");
+ initpage(10,11);
 });
       
 		</script>

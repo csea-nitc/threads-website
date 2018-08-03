@@ -49,11 +49,12 @@
 	width:80%;
 	margin-left:10%;
 	
+	
 }
 .editionname{
 	
 text-align:center;
- 
+ top:40%;
 	
 }
 .editionbox{
@@ -86,7 +87,7 @@ box-shadow: 10px 10px 107px -1px rgba(0,0,0,0.75);
 }
 			.sidenav-selected {
 				padding: 4px;
-				position: absolute;
+				position: fixed;
 				top: 40%;/*250px;*/
 				height: auto;
 				width: 23%;/*250px;*/
@@ -95,6 +96,7 @@ box-shadow: 10px 10px 107px -1px rgba(0,0,0,0.75);
 				/*! border-width:1px; */
 				background-color: #17252a;
 				border-radius: 4px;
+        
 			}
 
 			a {
@@ -207,18 +209,19 @@ box-shadow: 10px 10px 107px -1px rgba(0,0,0,0.75);
   
 }
 .titletext{
-a
+
   font-size:80%;   /*new*/
   float:left;
 }
 			.header-title {
-        color: #def2f1;
+        color: rgb(255,255,255);
 				font-size:60px;
 				text-align: center;
 				height: 120px;
-				position: relative;
-				top: 15px;
-				font-family: 'Kaushan Script', cursive;
+				position: fixed;
+				width:100%;
+				font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+        z-index:1;
 			
 	 background-color:#17252a;
 			}
@@ -231,18 +234,185 @@ a
 				background: none;
 			}
 
-			img {
-				display: inline-block;
-				height: 54%;/*85px;*/
-				width: 12%;/*80px;*/
-				/*margin-right:15px;*/
-				margin-top: 1%;
-				margin-left: 25%;
-			}
+		
 .title-box{
   
   font-size:24px;
  font-style:bold;
   
   
+}
+#topbar
+{
+  width:100%;
+  top:0px;
+ height:30%;
+  
+}
+#threadslogo
+{
+  z-index:2;
+  position:absolute;
+  top: 8.25%;
+  left:15%;
+  
+	width:30%;
+}
+#threadslogo-s{
+	
+  z-index:2;
+  position:absolute;
+  top: 3.25%;
+  left:15%;
+  
+	width:120px;
+	
+}
+#bottombar
+{
+  position:absolute;
+  bottom:0px;
+  height:15%;
+  width:100%;
+  z-index:-1;
+}
+#aboutbutton{
+    position: absolute;
+    max-width:9.3%;
+
+  
+  
+}
+
+
+#csedbutton
+{
+  position: absolute;
+    max-width:8%;
+}
+.downloadtxt{
+	font-size:24.5px;
+display:block;	 
+	
+	
+}
+.readtxt{
+	font-size:24.5px;
+	margin-top:30%;
+}
+.currentedition-box{
+  
+  
+  -webkit-box-shadow: 10px 10px 50px 7px rgba(0,0,0,0.36);
+-moz-box-shadow: 10px 10px 50px 7px rgba(0,0,0,0.36);
+box-shadow: 10px 10px 50px 7px rgba(0,0,0,0.36);
+  height:45%;
+  margin-top:14px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#40e2e8+18,2c539e+62 */
+background: rgb(64,226,232); /* Old browsers */
+background: -moz-linear-gradient(right, rgba(64,226,232,1) 18%, rgba(44,83,158,1) 62%); /* FF3.6-15 */
+background: -webkit-linear-gradient(right, rgba(64,226,232,1) 18%,rgba(44,83,158,1) 62%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(64,226,232,1) 18%,rgba(44,83,158,1) 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40e2e8', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
+}
+.month-edition{
+  
+  font-size:72px;
+	top:40%;
+	position:absolute;
+}
+.year-edition{
+  font-size:30px;
+display:block;
+	position:absolute;
+	top:52%;
+	margin-left:75px;
+  
+ 
+}
+#copyright
+{
+  position: absolute;
+  
+  height:17px;
+max-width:30%; 
+}
+.copyright-s{
+	
+	width:30%;
+	
+}
+#cseabutton
+{
+  position: absolute;
+   margin-left:7.5px;
+  max-width:8%;
+}
+#topbar-s{
+	 width:100%;
+  top:0px;
+ height:10%;
+	
+	
+}
+.footercontainer-small{
+	 position: absolute;
+   bottom:0px;
+	height:13%;
+	width:100%;
+	overflow:hidden;
+	
+	
+}
+.currentedition-box div.col{
+	
+	height:100%;
+}
+.footercontainer{
+	
+	
+	
+  position: absolute;
+   bottom:0px;
+	height:10%;
+	width:100%;
+	
+}
+#csealogo
+{
+  position: absolute;
+  height:50px;
+  
+}
+.smallbuttonfooter{
+	
+	width:auto;
+	max-height:5px;
+	
+	padding-left:30%;
+	
+	
+	
+}
+#csedlogo
+{
+  position: absolute;
+  height:50px;
+	
+
+}
+
+
+#container {
+  padding-left: 300px;
+}
+
+#content {
+  padding: 20px;
+}
+
+@media only screen and (max-width : 992px) {
+  #container {
+    padding-left: 0px;
+  }
 }
