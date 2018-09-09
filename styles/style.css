@@ -3,7 +3,14 @@
 				padding: 0px;
 				/*background: linear-gradient(to bottom, #116466 0%, #2c3531 100%);*/
 			}
-
+a{
+	text-decoration:none;
+	text-color:black;
+}
+.hide{
+	
+	display:none;
+}
 			body {
 				/*background: linear-gradient(to bottom, #88bdbc 0%, #254e58 100%);*/
 				/*background: linear-gradient(#88bdbc, #254e58);*/

@@ -1,6 +1,5 @@
 <?php
 
-
 $titleval="";
 $contentval="";
 $abio="";
@@ -8,6 +7,12 @@ $aval="";
 
 $photourl="";
 include 'header.php';
+
+
+
+   
+  
+    
 
 if(isset($_GET['id']))
 {
@@ -35,22 +40,36 @@ $result = $conn->query($sql);
 ?>
 
 
-<html>
-   <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head> 
-  
-  <body>
-    
+
     <script >
     function refreshrender()
       {
+           //send sata to a
+        tbox=$('#titlebox').val();
+    authorname=$('#authorname').val();
+    authorbio=$('#authorbio').val();
+    photourl=$('#photourl').val();
+var editor = ace.edit("editor");
+
+ code = editor.getValue();        
+        $.post( "savearticle.php",{
+          title:tbox,
+          authorname:authorname,
+          authorbio:authorbio,
+          photourl:photourl,
+          content:code,
+          mode:"edit",
+          eid:-2,
+          aid:-2
+}
         
-    var text = $('#htmlsource').val();
-      var title=$('#titlebox').val();
-        $('#titletext').html(title);
-        $('#contenthtml').html(text);    
-      
+  
+
+        ,function( data ) {
+         // console.log(data);
+        // alert(data);
+    window.location.href = '/admin/testarticle.php?id=<?php echo $_GET['id']; ?>';
+  });
       
       
       
@@ -63,14 +82,16 @@ $result = $conn->query($sql);
     authorname=$('#authorname').val();
     authorbio=$('#authorbio').val();
     photourl=$('#photourl').val();
-    htmlsource=$('#htmlsource').val();
+        var editor = ace.edit("editor");
+
+var code = editor.getValue();
         
         $.post( "savearticle.php",{
           title:tbox,
           authorname:authorname,
           authorbio:authorbio,
           photourl:photourl,
-          content:htmlsource,
+          content:code,
           mode:"<?php echo $_GET['mode']; ?>",
           eid:<?php echo $_GET['eid']; ?>
           <?php 
@@ -102,30 +123,31 @@ $result = $conn->query($sql);
    Author:<input type="text" id="authorname" placeholder="Author" value="<?php echo $aval;?>"></input><br>
   Author Bio:<input type="text" id="authorbio" placeholder="AuthorBio" value="<?php echo $abio;?>"></input><br>
 Photo-Url:<input type="text" id="photourl" placeholder="paste author phhoto url " value="<?php echo $photourl;?>"></input><br>
-    <div class="code">
-    post content(HTML):
-      <textarea id="htmlsource">
-      <?php echo $contentval;?>
-      
-      
-      </textarea><br>
+ 
+<style type="text/css" media="screen">
+    #editor { 
+      width:800px;
+      height:800px;
+    }
+</style>
+<div id="editor" >  <?php echo htmlspecialchars($contentval);?> </div>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/html");
+  //editor.setValue(' ")   ;
+</script>
+     <br>
       
       <input type="button" onclick="refreshrender();" value="preview"/>
      <input type="button" onclick="savearticle();" value="Save"/>
     
        
-    </div>
+    
   
   <div class="result">
     
-    <div  id="titletext" class="title">
-      
-       </div>
-    
-    <div class="content" id="contenthtml">
-      
-    </div>
-    
+   <!-- frame -->
     
   </div>
     

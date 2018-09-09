@@ -16,12 +16,12 @@ else{
 
 include '../common/con.php';
   
-$id=$_GET['id'];
+$id=-2;
 $sql="SELECT * FROM edition where visible=1 order by  year desc,month desc";
 $edit=$conn->query($sql);  
 
 
-$sql="SELECT * FROM edition where id=$id";
+$sql="SELECT * FROM edition where id=-2";
 $curedit=$conn->query($sql);
 $cureditrow=$curedit->fetch_assoc();
 
@@ -370,7 +370,7 @@ $cureditrow=$curedit->fetch_assoc();
 			$( document ).ready(function() {
      
         //load firstg current edition
-        initpage(10,11,true,"<?php echo $curname; ?>","<?php echo $curyear; ?>");
+        initpage(-2,-2,false,"<?php echo $curname; ?>","<?php echo $curyear; ?>");
 });
       
 		</script>

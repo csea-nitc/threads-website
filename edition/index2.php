@@ -151,12 +151,9 @@ $cureditrow=$curedit->fetch_assoc();
       </div>
 		<div class="col l4 m6 s12 center">
 		<div class="">
-      <div class="col s6">
-        <img class="responsive-img" src="/webimages/csea-logo.png">
+      <div class="col s12">
+        <img class="responsive-img" src="/webimages/logo.png">
       </div>
-      <div class="col s6">
-         <img class="responsive-img" src="/webimages/CSED-logo.png">
-		</div>
 			</div>
 		</div>
 	</div>

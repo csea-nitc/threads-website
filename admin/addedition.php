@@ -2,18 +2,12 @@
 
 <?php
 if($_SERVER['REQUEST_METHOD']=='POST')
-{
-  
-  
-  
+{ 
    include '../common/con.php';
-  
-  
-  
   $username=$_POST['name'];
   $year=$_POST['year'];
-   $edname=str_replace(' ', '', $username);
- var_dump( mkdir("../assets/$edname",0777,true));
+   $edname=str_replace(' ', '', $username.$year);
+  mkdir("../assets/$edname",0777,true);
   
   mkdir("../assets/$edname/images",0777,true);
   
@@ -24,10 +18,11 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   
   mkdir("../assets/$edname/others",0777,true);
 // getting query from db
-   
-$sql = "INSERT INTO `edition`( `name`,`year`) VALUES ('".$username."','".$year."')";
-  
+   $month=array("JAN"=>1,"FEB"=>2,"MAR"=>3,"APR"=>4,"MAY"=>5,"JUN"=>6,"JUL"=>7,"AUG"=>8,"SEP"=>9,"OCT"=>10,"NOV"=>11,"DEC"=>12);
+$sql = "INSERT INTO `edition`( `name`,`year`,`month`) VALUES ('".$username."','".$year."',".$month[$username].")";
+
 $result = $conn->query($sql);
+
  $conn->close();
 header("Location:manage.php");
 

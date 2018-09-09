@@ -3,8 +3,9 @@
 include "common/con.php";
 
 //fetch latest edition and fill placeholders 
-$sql="select ";
-
+$sql="select * from edition where visible =1 order by year desc , month desc";
+$edit=$conn->query($sql);  
+///SELECT convert(datetime, CONCAT('10 ',CONCAT(CONCAT(name,' '),year), 106)
 ?>
 
 
@@ -44,7 +45,7 @@ $sql="select ";
     </div>
 
 		<!--img id="threadslogo" src="/webimages/threads-logo.png"-->
- 
+ <!---
         <div class="row">
       <div class="col m8 s12 v-currentedition-box offset-m2">
       <div class="col m6 s12">
@@ -58,35 +59,99 @@ $sql="select ";
         <div class="col m6 s12">
           <div class="left" style="font-family:'webfontregular';">
              <h5>
-               Read Online<br><br>Download PDF</h5>
+               Read Online<br><br>Downlod PDF</h5>
 							 <br><br><br><hr style="color:000000">
               <h4 style='font-weight:500;'> Previous Editions
           </h4></div>
         </div>
       </div>
     </div>
+		-->
+	<?php
+		$ii=0;
+		while($row=$edit->fetch_assoc())
+		{
+		
+		?>
+		
+		       <div class="row <?php if($ii!=0){echo "hide";}?>">
+      <div class="col m8 s12 v-currentedition-box offset-m2">
+      <div class="col m6 s12">
+             <div class="center-align" style="font-size:800%; font-family: 'vogueregular';margin-bottom:-18%;">
+							 <?php echo $row["name"];  ?>. </div><div class="center-align" style="font-size: 400%; font-family: 'vogueregular'; margin-left:20%;" >        
+          <?php echo $row["year"];  ?>
+        </div>
+        
+ 
+           </div>
+        <div class="col m6 s12">
+          <div class="left" style="font-family:'webfontregular';">
+             <h5>
+               <a href="<?php echo "/edition/?id=".$row["id"];  ?>">Read Online</a><br><br>
+							 
+							 <?php
+			
+									if ($row["pdflink"]!="nil"){ ?>		
+							 <!-- link visible only having pdf-->
+							 <a href="<?php echo $row["pdflink"]; ?>"> Download PDF</a>
+								 <?php
+																							
+																						 }
+								 ?>
+								 
+								 </h5>
+							 <br><br><br>
+						
+						<?php if($ii==0){ ?>
+						<!--- only for first-->
+						<hr style="color:000000">
+              <h4 style='font-weight:500;'> <span onclick="loadprev();"  ><u>Previous Editions</u></span>
+          </h4>
+					<?php }  ?>
+					
+					</div>
+        </div>
+      </div>
+    </div>
+		
+		
+		
+		<?php
+			$ii=$ii+1;
+		}
+			
+			?>
 <div class="newfooter" style="background-image : url('/webimages/bottombar.png'); background-repeat: no-repeat;padding:0; background-size:cover;position:relative; bottom:0;">
-  <div class="row">
+  <div class="row" style="padding-top:22px;">
    <div class="col s2 m1 l1 offset-l2 offset-m2 offset-s1" style='padding: 1%;'>
         <img class="responsive-img" src="/webimages/About.png" >
     </div>
 <div class="col s2 m1 l1 offset-s2" style='padding: 1%;'>
-     <img class="responsive-img" src="/webimages/CSEA.png">
+     <a href="http://assoc.cse.nitc.ac.in/"><img class="responsive-img" src="/webimages/CSEA.png"></a>
      </div>
      <div class="col s2 m1 l1 offset-s2" style='padding: 1%;'>
-  <img class="responsive-img" src="/webimages/CSED.png">
+			 <a href="http://minerva.nitc.ac.in/cse/"><img class="responsive-img" src="/webimages/CSED.png"></a>
      </div>
-      <div class="col s2 m1 l1 offset-l3 offset-m3 offset-s2" style="padding:1%">
-      <img class="responsive-img" src="/webimages/csea-logo.png" >
+    
+        <div class="col s4 m3 l4 offset-s1 offset-l3 offset-m2"  > 
+        <img class="responsive-img" src="/webimages/logo.png" style="margin-left:13%;" >
     </div>
-        <div class="col s2 m1 l1 offset-s3" style='padding: 1%;'> 
-        <img class="responsive-img" src="/webimages/CSED-logo.png">
-    </div>
-    <div class="col s12 m12 l12 center-align" >
-      <img class="responsive-img" src="/webimages/copyright.png">
-    </div>
+   
   </div>
     </div>
-    
+    <script>
+		
+		function loadprev()
+			{
+				
+				$(".hide").removeClass().addClass("row");
+				
+				  $("body").animate({
+          scrollTop:  300
+     });
+				
+			}
+		
+		</script>
   </body>
 </html>

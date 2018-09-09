@@ -38,7 +38,7 @@ background: -moz-linear-gradient(right, rgba(64,226,232,1) 18%, rgba(44,83,158,1
 background: -webkit-linear-gradient(right, rgba(64,226,232,1) 18%,rgba(44,83,158,1) 62%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to right, rgba(64,226,232,1) 18%,rgba(44,83,158,1) 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40e2e8', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
-margin-top: 5%;
+
   margin-bottom:-15%;
   padding-bottom:-15%;
   overflow: hidden;
