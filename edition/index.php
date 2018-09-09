@@ -6,7 +6,10 @@ function isMobile() {
 }
 
 
+
 if(isMobile()  && false)
+
+
 {
 	include 'mobilepage.php';
 	

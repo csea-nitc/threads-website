@@ -1,3 +1,4 @@
+
 <?php
 
 include '../common/con.php';
@@ -156,7 +157,6 @@ $cureditrow=$curedit->fetch_assoc();
   
   
   
-
 <script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -167,6 +167,7 @@ $cureditrow=$curedit->fetch_assoc();
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
 		<script>
   
    document.addEventListener('DOMContentLoaded', function() {
@@ -308,6 +309,7 @@ $cureditrow=$curedit->fetch_assoc();
 });
       
   </script>
+ 
 </body>
 
 </html>
