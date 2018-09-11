@@ -7,34 +7,23 @@ $aval="";
 
 $photourl="";
 include 'header.php';
-
-
-
-   
-  
-    
-
+ 
 if(isset($_GET['id']))
-{
-  
- include '../common/con.php';
-  
- $id=$_GET['id'];
-$sql = "SELECT * from Articles where id=$id";
-  
-$result = $conn->query($sql);
-  
-  $row=$result->fetch_assoc();
-  
-  $titleval=$row['title'];
-  $contentval=$row['content'];
-  $aval=$row['authorname'];
-  $abio=$row['authorshortbio'];
-  $photourl=$row['authorphoto'];
+{  include '../common/con.php';
 
+            $id=$_GET['id'];
+            $sql = "SELECT * from Articles where id=$id";
 
-  
-  
+            $result = $conn->query($sql);
+
+            $row=$result->fetch_assoc();
+
+            $titleval=$row['title'];
+            $contentval=$row['content'];
+            $aval=$row['authorname'];
+            $abio=$row['authorshortbio'];
+            $photourl=$row['authorphoto'];
+            $artdate=$row['date'];
 }
 
 ?>
@@ -46,30 +35,31 @@ $result = $conn->query($sql);
       {
            //send sata to a
         tbox=$('#titlebox').val();
+        console.log(tbox);
     authorname=$('#authorname').val();
     authorbio=$('#authorbio').val();
     photourl=$('#photourl').val();
+        date=$('#artdate').val();
 var editor = ace.edit("editor");
 
- code = editor.getValue();        
-        $.post( "savearticle.php",{
+ code = editor.getValue();  
+       
+        $.post( "/edition/testarticle.php",{
           title:tbox,
           authorname:authorname,
           authorbio:authorbio,
-          photourl:photourl,
+          authorphoto:photourl,
           content:code,
+         artdate:date,
           mode:"edit",
           eid:-2,
           aid:-2
 }
-        
-  
-
-        ,function( data ) {
-         // console.log(data);
+             ,function( data ) {
+         console.log(data);
         // alert(data);
-    window.location.href = '/admin/testarticle.php?id=<?php echo $_GET['id']; ?>';
-  });
+        $("#iframe1").contents().find('body').html(data); 
+        });
       
       
       
@@ -82,6 +72,7 @@ var editor = ace.edit("editor");
     authorname=$('#authorname').val();
     authorbio=$('#authorbio').val();
     photourl=$('#photourl').val();
+              date=$('#artdate').val();
         var editor = ace.edit("editor");
 
 var code = editor.getValue();
@@ -90,8 +81,9 @@ var code = editor.getValue();
           title:tbox,
           authorname:authorname,
           authorbio:authorbio,
-          photourl:photourl,
+          authorphoto:photourl,
           content:code,
+           artdate:date,
           mode:"<?php echo $_GET['mode']; ?>",
           eid:<?php echo $_GET['eid']; ?>
           <?php 
@@ -123,11 +115,12 @@ var code = editor.getValue();
    Author:<input type="text" id="authorname" placeholder="Author" value="<?php echo $aval;?>"></input><br>
   Author Bio:<input type="text" id="authorbio" placeholder="AuthorBio" value="<?php echo $abio;?>"></input><br>
 Photo-Url:<input type="text" id="photourl" placeholder="paste author phhoto url " value="<?php echo $photourl;?>"></input><br>
- 
+Date of article:<input type="date" value="<?php echo $artdate;?>" id="artdate" name="artdate"/>
+
 <style type="text/css" media="screen">
     #editor { 
       width:800px;
-      height:800px;
+      height:500px;
     }
 </style>
 <div id="editor" >  <?php echo htmlspecialchars($contentval);?> </div>
@@ -141,22 +134,17 @@ Photo-Url:<input type="text" id="photourl" placeholder="paste author phhoto url 
       
       <input type="button" onclick="refreshrender();" value="preview"/>
      <input type="button" onclick="savearticle();" value="Save"/>
+       <!-- frame -->
+      
+    </hr>
+     <iframe id="iframe1" draggable="true" width="900" height="1500" style=""">
     
+    </iframe>  
        
-    
+</div>
   
-  <div class="result">
-    
-   <!-- frame -->
-    
-  </div>
-    
-    
-    
-    
-    
-    
-    
+ 
+
 <?php include 'footer.php';?>
     
   </body>

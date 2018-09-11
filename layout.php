@@ -53,6 +53,7 @@
             
              <span class="readtxt">Read Online</span>
 							<span class="downloadtxt">Download PDF</span>
+						 <img src="/file.php?id=1" />
 
            </div>
            </div>

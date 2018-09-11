@@ -1,4 +1,8 @@
+
+
+
 <?php
+
 function isMobile() {
     
 	
@@ -21,7 +25,7 @@ $sql="SELECT * FROM edition where visible=1 order by  year desc,month desc";
 $edit=$conn->query($sql);  
 
 
-$sql="SELECT * FROM edition where id=-2";
+$sql="SELECT * FROM edition ";
 $curedit=$conn->query($sql);
 $cureditrow=$curedit->fetch_assoc();
 
@@ -125,6 +129,7 @@ $cureditrow=$curedit->fetch_assoc();
 
 
 																}
+	$va=$_POST;
 																?>
  
 									</div>
@@ -143,9 +148,9 @@ $cureditrow=$curedit->fetch_assoc();
                     <div class="col offset-s9 s3">
                         <div class="edyear">
                             
-                        <span class="top-edition-text">AUG</span>
+                        <span class="top-edition-text">JAN</span>
                                         <span class="top-edition-text">.</span>
-                        <span class="top-edition-year-text">2018</span>
+                        <span class="top-edition-year-text">20XX</span>
                 
                         </div>
                         </div>
@@ -154,20 +159,24 @@ $cureditrow=$curedit->fetch_assoc();
             <div class="col">
                                     <div class="article-box" id="article-box">
                                         <div class="title-box" id="title-box">
+																					
+																				<?php echo $va["title"]; ?>	
                                         </div>
                                  <div class="authordetails" id="authordetails">
                                                    <div class="authornameandphoto">
-                                                    <span class="authorname" id="authorname">Arjun Suresh
+                                                    <span class="authorname" id="authorname"><?php echo $va["authorname"]; ?>
                                                     </span>
 																	 											
-																											<img height="50" width="50" class="circle authorphoto responsive-img" id="authorphoto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqIgbcCpiwO-V04gZWfGRZl-qrmIbgKXZtHCDjhV9nF_l3tD0g9w"/>
+																											<img height="50" width="50" class="circle authorphoto responsive-img" id="authorphoto" src="<?php echo $va["authorphoto"]; ?>"/>
 																	
 																										 
-																										 <div class="authorbio" id="authorbio">Something Something
+																										 <div class="authorbio" id="authorbio"><?php echo $va["authorbio"]; ?>
                                                     </div> </div>
                                         </div>
                                             
                                         <div class="content-box" id="content-box">
+																					
+																					<?php echo $_POST["content"]; ?>
                                         </div>
                                         
             
@@ -263,8 +272,31 @@ $cureditrow=$curedit->fetch_assoc();
 			    }
 			  });
 			}*/
+			
+			function loaddummy(data)
+			{
+				
+				//{}
+						 
+					var article = data;
+					var i;
+					$('#title-box').empty();
+					
+					//$('#content-box').empty();
+					
+					$('#title-box').html(article.title);
+					$('#viewcount').html(article.viewcount+" Views");
+					$('#content-box').html(article.content);
+					$('#authorbio').html(article.authorshortbio);
+			
+				$('#authorname').html(article.authorname);
+					if(article.authorname!="nil"){
+					jQuery("#authorphoto").attr("src", article.authorphoto) 
+					} 
+			}
 
 			function loadarticle(id) {
+				return;
         $('.navbaritem-selected').removeClass().addClass("navbaritem");
         $('[eid='+id+']').removeClass();
         $('[eid='+id+']').addClass("navbaritem-selected")
@@ -288,20 +320,16 @@ $cureditrow=$curedit->fetch_assoc();
 				*/
  
 				$.get("/getarticle.php?id=" + id, function(data) {
-  
 					var article = JSON.parse(data);
-
 					var i;
-
 					$('#title-box').empty();
 					
 					$('#content-box').empty();
+					
 					$('#title-box').html(article.title);
-
 					$('#viewcount').html(article.viewcount+" Views");
 					$('#content-box').html(article.content);
 					$('#authorbio').html(article.authorshortbio);
-			
 				$('#authorname').html(article.authorname);
 					if(article.authorname!="nil"){
 					jQuery("#authorphoto").attr("src", article.authorphoto) 
@@ -329,8 +357,7 @@ $cureditrow=$curedit->fetch_assoc();
 						var title = $(document.createElement('div')).attr({eid:articles[i].id,onclick:"loadarticle("+articles[i].id+");"});
 						if(loadfirstarticle&&i==0){
             title.addClass("navbaritem-selected");
-
-            }
+						}
               else{title.addClass("navbaritem");
             }
             
@@ -342,15 +369,11 @@ $cureditrow=$curedit->fetch_assoc();
 						loadarticle(articles[0].id);
 							}
 				});
-
-
-
-
+				
 			}
       
 		 function selectarticle(idd)
 			{
-         
 				 loadarticle(idd)
 				
 			}
@@ -370,8 +393,26 @@ $cureditrow=$curedit->fetch_assoc();
 			$( document ).ready(function() {
      
         //load firstg current edition
-        initpage(-2,-2,false,"<?php echo $curname; ?>","<?php echo $curyear; ?>");
-});
+       // initpage(10,11,false,"<?php echo $curname; ?>","<?php echo $curyear; ?>");
+					
+					/*$('#title-box').html(article.title);
+					$('#viewcount').html(article.viewcount+" Views");
+					$('#content-box').html(article.content);
+					$('#authorbio').html(article.authorshortbio);
+				$('#authorname').html(article.authorname);*/
+				/*	if(article.authorname!="nil"){
+					jQuery("#authorphoto").attr("src", article.authorphoto)
+					}*/
+					<?php	$va=$_POST; ?>
+						
+						
+						
+				data={title:"<?php echo $va["title"]; ?>",
+							viewcount:0,content:"",authorshortbio:"<?php echo $va["authorbio"]; ?>",
+							authorname:"<?php echo $va["authorname"]; ?>",authorphoto:"<?php echo $va["authorphoto"]; ?>"};
+						loaddummy(data);
+					
+					});
       
 		</script>
 	</body>

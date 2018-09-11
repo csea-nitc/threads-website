@@ -80,7 +80,7 @@
 }
 #title-box{ 
 font-family:noto_serifregular;
-	font-size:22pt;
+	font-size:32pt;
 }
 body{ 
 }
@@ -94,28 +94,41 @@ height:auto;
 }
 #content-box{
 	margin-top:100px;
-	font-size:13pt;
+	font-size:15pt;
 	
 }
 .authornameandphoto{
 	
 float:right;
-	width:250px;
+	width:500px;
+
+	
+}
+.authortext{
+float:right;
+	margin-right:20px;
 	
 }
 .authorphoto{
 	
 	 margin-left:0px;
 	padding-left:0px;
+	
 	float:right;
+	width:80px;
+	height:80px;
 }
 #authorname{
-	font-size:16pt;
+	padding-top:9px;
+	font-size:18pt;
+	 
 	
 }
 #authorbio{
-	font-size:12px;
 	
+	padding-top:7px;
+	font-size:15px;
+	 
 }
 .waves-effect.waves-gray .waves-ripple {
    /* The alpha value allows the text and background color
@@ -161,7 +174,7 @@ word-wrap: break-word;
  
 }
 #navbarentry-wrap{
-	font-size:12pt;
+	font-size:14.5pt;
 	font-family:webfontregular;
 	vertical-align:middle;
 	text-align:center;
@@ -185,7 +198,7 @@ box-shadow: 0px 0px 25px -12px rgba(105,105,105,0.75);
 	width:100%;
  font-weight: bold;
  margin-top:20px;	
-	
+height:34px;
 word-wrap: break-word;
 
 	
@@ -201,7 +214,7 @@ word-wrap: break-word;
 	color:#696969;
 
 	pointer:cursor;
-	
+	height:34px;
 	
 }
 .navbaritem:hover{
@@ -215,6 +228,7 @@ word-wrap: break-word;
 	color:#696969;
 
 	cursor:pointer;
+	height:34px;
 }
 
 .threads-ribbon {
@@ -233,11 +247,7 @@ word-wrap: break-word;
 	left: 20%;
 }
 
-img {
-	position: relative;
-	max-height: 50px;
-	height: 50px;
-}
+ 
 
 
 

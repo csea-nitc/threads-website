@@ -12,12 +12,12 @@ if(isset($_POST["submit"])) {
   $type=$_POST["type"];
     $name=$_POST["name"];
     $edid=$_POST["edid"];
-    $sql="SELECT name from edition where id=$edid";
+    $sql="SELECT * from edition where id=$edid";
   $result=$conn->query($sql);
   $row= $result->fetch_assoc();
-  $editionfolder= str_replace(' ', '', $row["name"]);
+  $editionfolder= str_replace(' ', '', $row["name"]).$row["year"];
   $sqlfile="assets/".$editionfolder;
-  $target_dir = "../assets/".$editionfolder; // generatye from edition name
+  $target_dir = "../assets/".$editionfolder; // generate from edition name
   if($type=="Image")
   {
     $subfolder="/images/";

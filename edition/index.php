@@ -28,7 +28,8 @@ $sql="SELECT * FROM edition where id=$id";
 $curedit=$conn->query($sql);
 $cureditrow=$curedit->fetch_assoc();
 
-
+$curname=substr($cureditrow["name"],0,3);
+                                    $curyear=$cureditrow["year"];
 
   
 ?>
@@ -68,7 +69,7 @@ $cureditrow=$curedit->fetch_assoc();
  
 <div class="row">
  
-    <div class="container">
+    <div class="s10 offset-s1 col">
     
         <div class="col s2 l2 m2">
 					<div id="floatsidebar">
@@ -100,16 +101,11 @@ $cureditrow=$curedit->fetch_assoc();
                      
 
 																<?php 
-    $i=0;
+ 
 																while($w=$edit->fetch_assoc())
 																{
                                   
-                                  if($i==0)
-                                  {
-                                    $curname=substr($w["name"],0,3);
-                                    $curyear=$w["year"];
-                                    $i=1;
-                                  }
+                                
                                   $curid=$w["id"];
                                   $cname=$w["name"];
                                   $cyear=$w["year"];
@@ -117,7 +113,8 @@ $cureditrow=$curedit->fetch_assoc();
                                   
 
 		
-    <div class="navbaritem" onclick="initpage(<?php echo $curid; ?>,-1,true,this.getAttribute('edname'),this.getAttribute('eyear'));" edname="<?php echo  substr($cname,0,3);; ?>" eyear="<?php echo  $cyear; ?>"><?php  echo $w["name"];	?></div>
+    <div class="navbaritem" id="editionentry" onclick="initpage(<?php echo $curid; ?>,-1,true,this.getAttribute('edname'),this.getAttribute('eyear'));" 
+				 edname="<?php echo  substr($cname,0,3);; ?>" eyear="<?php echo  $cyear; ?>" edid="<?php echo  $w["id"]; ?>"><?php  echo $w["name"];	?></div>
     
   
         
@@ -146,9 +143,9 @@ $cureditrow=$curedit->fetch_assoc();
                     <div class="col offset-s9 s3">
                         <div class="edyear">
                             
-                        <span class="top-edition-text">AUG</span>
+                        <span class="top-edition-text" id="ednametxt"><?php echo $curname; ?></span>
                                         <span class="top-edition-text">.</span>
-                        <span class="top-edition-year-text">2018</span>
+                        <span class="top-edition-year-text" id="edyeartxt"><?php echo $curyear; ?></span>
                 
                         </div>
                         </div>
@@ -160,14 +157,20 @@ $cureditrow=$curedit->fetch_assoc();
                                         </div>
                                  <div class="authordetails" id="authordetails">
                                                    <div class="authornameandphoto">
-                                                    <span class="authorname" id="authorname">Arjun Suresh
+																										 <img height="80" width="80" class="circle authorphoto responsive-img" id="authorphoto" src=""/>
+																										 <div class="authortext">
+																											 
+																										 
+                                                    <span class="authorname" id="authorname">
                                                     </span>
 																	 											
-																											<img height="50" width="50" class="circle authorphoto responsive-img" id="authorphoto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqIgbcCpiwO-V04gZWfGRZl-qrmIbgKXZtHCDjhV9nF_l3tD0g9w"/>
+																											
 																	
 																										 
-																										 <div class="authorbio" id="authorbio">Something Something
-                                                    </div> </div>
+																											 <div class="authorbio" id="authorbio"> </div>
+																											 </div>
+																											 
+                                                      </div>
                                         </div>
                                             
                                         <div class="content-box" id="content-box">
@@ -199,9 +202,9 @@ $cureditrow=$curedit->fetch_assoc();
   <div class="container" style="padding-top:1%;padding-bottom:3%;z-index:8;" >
  
       <div class="col l4 m6 s12 center">
-        <img class="responsive-img col s4" src="/webimages/About.png" style="padding:1px;" >
-		<a href="http://assoc.cse.nitc.ac.in/">		<img class="responsive-img col s4" src="/webimages/CSEA.png" style="padding:1px;"></a>
-        <a href="http://minerva.nitc.ac.in/cse/"></a><img class="responsive-img col s4" src="/webimages/CSED.png" style="padding:1px;"></a>
+        <img class="responsive-img col s4" src="/webimages/About.png" style="padding:8px;padding-right:14px" >
+		<a href="http://assoc.cse.nitc.ac.in/">		<img class="responsive-img col s4" src="/webimages/CSEA.png" style="padding:8px;padding-right:22px"></a>
+        <a href="http://minerva.nitc.ac.in/cse/"></a><img class="responsive-img col s4" src="/webimages/CSED.png" style="padding:8px;padding-right:22px"></a>
       </div>
       <div class="col l4 m6 s12 center" >
         <span style="font-family:'webfontregular'; font-weight:350; color: #FFFFFF; font-size:40px;vertical-align:center;">threads.</span>
@@ -268,7 +271,7 @@ $cureditrow=$curedit->fetch_assoc();
 			}*/
 
 			function loadarticle(id) {
-        $('.navbaritem-selected').removeClass().addClass("navbaritem");
+        $('#articleentry.navbaritem-selected').removeClass().addClass("navbaritem");
         $('[eid='+id+']').removeClass();
         $('[eid='+id+']').addClass("navbaritem-selected")
 				/*
@@ -317,11 +320,12 @@ $cureditrow=$curedit->fetch_assoc();
 			
 			}
 			function loadarticlelist(id,loadfirstarticle) {
-			 
-        
-      
-        
-        $('#navbarentry-wrap').html('');
+			 //
+				$('#editionentry.navbaritem-selected').removeClass().addClass("navbaritem");
+				$('[edid='+id+']').removeClass();
+				$('[edid='+id+']').addClass("navbaritem-selected");
+				
+				$('#navbarentry-wrap').html('');
 				$.get("../getarticlelist.php?id=" + id, function(data) {
 
 					var articles = JSON.parse(data);
@@ -329,8 +333,8 @@ $cureditrow=$curedit->fetch_assoc();
 					var i;
 					 var ind;
 					for (i = 0; i < articles.length; i++) { 
-						var title = $(document.createElement('div')).attr({eid:articles[i].id,onclick:"loadarticle("+articles[i].id+");"});
-						if(loadfirstarticle&&i==0){
+						var title = $(document.createElement('div')).attr({id:"articleentry",eid:articles[i].id,onclick:"loadarticle("+articles[i].id+");"});
+						if(loadfirstarticle==false&&i==0){
             title.addClass("navbaritem-selected");
 
             }
@@ -362,20 +366,32 @@ $cureditrow=$curedit->fetch_assoc();
 			function initpage(editionid,articleid,loadfirstarticle,edname,edyear)
 			{
       
-        $('#top-edition-text').html(edname);
-        $('#top-edition-year').html(edyear);
+        $('#ednametxt').html(edname);
+        $('#edyeartxt').html(edyear);
 				
         loadarticlelist(editionid,loadfirstarticle);
         if(loadfirstarticle==false){
 				          selectarticle(articleid);
 				}
 			}
+			
 			$( document ).ready(function() {
      
-        //load firstg current edition
-        initpage(10,11,true,"<?php echo $curname; ?>","<?php echo $curyear; ?>");
+				$(window).scroll(function(){
+    $("#floatsidebar").css("margin-top",Math.max(-200,0-$(this).scrollTop()));
+						 console.log($(document).height()-150+" :"+$(this).scrollTop());
+			   if($(this).scrollTop()>($(document).height()-150))
+						{
+							$("#floatsidebar").hide();
+					 }
+					else{
+						  $("#floatsidebar").show();
+					}
 });
-      
+        //load firstg current edition
+        initpage(<?php echo $cureditrow['id']; ?>,-11,true,"<?php echo $curname; ?>","<?php echo $curyear; ?>");
+});
+       
 		</script>
 	</body>
 
