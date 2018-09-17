@@ -21,7 +21,7 @@
 
 .v-currentedition-box{
   padding:14px;
-  
+  height:35%;
   margin:14px;
   background: rgb(255,255,255); /* Old browsers */
 background: -moz-linear-gradient(right, rgba(255,255,255,1) 18%, rgba(255,255,255,1) 62%); /* FF3.6-15 */
@@ -44,9 +44,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40e2e8', end
   overflow: hidden;
 }
 .newfooter{
-  margin-top: 4%;
-  margin-bottom:-15%;
-  padding-bottom:-15%;
+  
+	background-image: url('/webimages/bottombar.png');
+	background-repeat: no-repeat;
+	padding: 0;
+	background-size: cover;
+	bottom: 0px;
+	width: 100%;
+	position: absolute;
+  
+
+ 
   
 }
 

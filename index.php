@@ -17,10 +17,10 @@ $edit=$conn->query($sql);
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+	 
 		<link href="/styles/style.css" rel="stylesheet">
     <link href="/styles/v-style.css" rel="stylesheet">
+																					 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
@@ -37,7 +37,7 @@ $edit=$conn->query($sql);
     
 
  
-<div class="z-depth-2" style="background : url('/webimages/topbar.png')">
+<div class="z-depth-2" style="background : url('/webimages/topbar.png');background-repeat:round;">
   <div class="container ">
     <img style="padding :30px 14px" src="/webimages/threads-logo.png" class="responsive-img">
   </div>
@@ -78,40 +78,39 @@ $edit=$conn->query($sql);
       <div class="col m8 s12 v-currentedition-box offset-m2">
       <div class="col m6 s12">
              <div class="center-align" style="font-size:800%; font-family: 'vogueregular';margin-bottom:-18%;">
-							 <?php echo $row["name"];  ?>. </div><div class="center-align" style="font-size: 400%; font-family: 'vogueregular'; margin-left:20%;" >        
+							 <?php echo $row["name"];  ?> </div><div class="center-align" style="	font-size: 25pt;	font-family: 'vogueregular';	position: relative;	margin-top: 46px;	margin-left: -119px;" >        
           <?php echo $row["year"];  ?>
         </div>
         
  
            </div>
-        <div class="col m6 s12">
-          <div class="left" style="font-family:'webfontregular';">
-             <h5>
-               <a href="<?php echo "/edition/?id=".$row["id"];  ?>">Read Online</a><br><br>
+        <div class="col  offset-m1 m4 s12">
+					<div style="width:100%;height:100%;margin:15px;">
+						
+        					<a href="<?php echo "/edition/?id=".$row["id"];  ?>" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">pageview</i>Read Online</a>
 							 
-							 <?php
-			
-									if ($row["pdflink"]!="nil"){ ?>		
-							 <!-- link visible only having pdf-->
-							 <a href="<?php echo $row["pdflink"]; ?>"> Download PDF</a>
+						  <?php
+								
+									if ($row["pdflink"]!="nil" or true){ ?>		<a href="<?php echo $row["pdflink"]; ?>" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">file_download</i>Download PDF</a>   
 								 <?php
 																							
 																						 }
 								 ?>
 								 
-								 </h5>
-							 <br><br><br>
+							
+						 
 						
 						<?php if($ii==0){ ?>
 						<!--- only for first-->
-						<div id="prevbutton">
+					
 							
-						<hr style="color:000000">
-              <h4 style='font-weight:500;'> <span  onclick="loadprev();"  ><u>Previous Editions</u></span>
-          </h4>
-						</div>
+							<a href="/prev.php" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">arrow_forward
+								</i>Previous Edition</a>
+				
 					<?php }  ?>
 					
+					</div>
+           
 					</div>
         </div>
       </div>
@@ -124,10 +123,10 @@ $edit=$conn->query($sql);
 		}
 			
 			?>
-<div class="newfooter" style="background-image : url('/webimages/bottombar.png'); background-repeat: no-repeat;padding:0; background-size:cover;position:relative; bottom:0;">
+<div class="newfooter" >
   <div class="row" style="padding-top:22px;">
-   <div class="col s2 m1 l1 offset-l2 offset-m2 offset-s1" style='padding: 1%;'>
-        <img class="responsive-img" src="/webimages/About.png" >
+   <div class="col s2 m1 l1 offset-l2 offset-m2 offset-s1" style='	padding-top: -1px;	padding: 1% 1% 1% 1%;'>
+		<a href="/about.php"><img class="responsive-img" src="/webimages/About.png" /></a>
     </div>
 <div class="col s2 m1 l1 offset-s2" style='padding: 1%;'>
      <a href="http://assoc.cse.nitc.ac.in/"><img class="responsive-img" src="/webimages/CSEA.png"></a>
