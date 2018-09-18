@@ -19,7 +19,7 @@ $edit=$conn->query($sql);
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	 
 		<link href="/styles/style.css" rel="stylesheet">
-    <link href="/styles/v-style.css" rel="stylesheet">
+ 
 																					 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
@@ -78,20 +78,30 @@ $edit=$conn->query($sql);
       <div class="col m8 s12 v-currentedition-box offset-m2">
       <div class="col m6 s12">
              <div class="center-align" style="font-size:800%; font-family: 'vogueregular';margin-bottom:-18%;">
-							 <?php echo $row["name"];  ?> </div><div class="center-align" style="	font-size: 25pt;	font-family: 'vogueregular';	position: relative;	margin-top: 46px;	margin-left: -119px;" >        
+							 <?php echo $row["name"];  ?> </div><div class="center-align" style="font-size: 25pt;	font-family: 'vogueregular';	position: relative;	margin-top: 16px;	margin-left: -28.1%;" >        
           <?php echo $row["year"];  ?>
         </div>
         
  
            </div>
         <div class="col  offset-m1 m4 s12">
-					<div style="width:100%;height:100%;margin:15px;">
+					<div style="width:100%;height:100%;margin-top:6%;">
+						<div class="linkgroups">
+							
+								
+								<a href="<?php echo "/edition/?id=".$row["id"];  ?>" >Read Online
+							
+								
+	</a></div>
 						
-        					<a href="<?php echo "/edition/?id=".$row["id"];  ?>" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">pageview</i>Read Online</a>
-							 
 						  <?php
 								
-									if ($row["pdflink"]!="nil" or true){ ?>		<a href="<?php echo $row["pdflink"]; ?>" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">file_download</i>Download PDF</a>   
+									if ($row["pdflink"]!="nil" or true ){ ?>		<div class="linkgroups">
+						<a    href="<?php echo $row["pdflink"]; ?>">  Download PDF 
+						
+					 </a>  </div>
+			
+ 
 								 <?php
 																							
 																						 }
@@ -104,8 +114,8 @@ $edit=$conn->query($sql);
 						<!--- only for first-->
 					
 							
-							<a href="/prev.php" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">arrow_forward
-								</i>Previous Edition</a>
+					<div class="prev-link">
+        		<a   href="/prev.php" >Previous Edition</a></div>
 				
 					<?php }  ?>
 					
@@ -125,7 +135,7 @@ $edit=$conn->query($sql);
 			?>
 <div class="newfooter" >
   <div class="row" style="padding-top:22px;">
-   <div class="col s2 m1 l1 offset-l2 offset-m2 offset-s1" style='	padding-top: -1px;	padding: 1% 1% 1% 1%;'>
+   <div class="col s2 m1 l1 offset-l2 offset-m2 offset-s1" style='margin-left:14.1%;	padding-top: -1px;	padding: 1% 1% 1% 1%;'>
 		<a href="/about.php"><img class="responsive-img" src="/webimages/About.png" /></a>
     </div>
 <div class="col s2 m1 l1 offset-s2" style='padding: 1%;'>

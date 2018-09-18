@@ -7,7 +7,7 @@ function isMobile() {
 
 
 
-if(isMobile()  && false)
+if(isMobile() )
 
 
 {
@@ -174,6 +174,8 @@ $curname=substr($cureditrow["name"],0,3);
 
 											<div class="authorbio" id="authorbio"> </div>
 										</div>
+										
+										
 										<div class="dateread">
 											
 											<span class="artdate" id="artdate">
@@ -335,9 +337,10 @@ $curname=substr($cureditrow["name"],0,3);
 					$('#viewcount').html(article.viewcount + " Views");
 					$('#content-box').html(article.content);
 					$('#authorbio').html(article.authorshortbio);
+					if(article.authorname!=""){
 					$('#readmin').html(article.minutes +" min read");
 					$('#artdate').html(article.datetxt);
-
+					}
 					$('#authorname').html(article.authorname);
 					if (article.authorname != "nil") {
 						jQuery("#authorphoto").attr("src", article.authorphoto)

@@ -1,7 +1,9 @@
 <?php
 
+die();
 if(isset($_GET['id']))
 {
+ 
 include '../common/con.php';  
   $id=$_GET['id'];
  // getting query from db

@@ -76,7 +76,7 @@ $edit=$conn->query($sql);
 							 
 						  <?php
 								
-									if ($row["pdflink"]!="nil" or true){ ?>		<a href="<?php echo $row["pdflink"]; ?>" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">file_download</i>Download PDF</a>   
+									if ($row["pdflink"]!="nil"){ ?>		<a href="<?php echo $row["pdflink"]; ?>" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">file_download</i>Download PDF</a>   
 								 <?php
 																							
 																						 }
@@ -101,11 +101,17 @@ $edit=$conn->query($sql);
 			<div class="row" style="	background: url('/webimages/BG.png');	height: 266px;	margin-bottom: 0px;	padding-top: 29px;	background-size: cover;	position: relative;">
 				<div class="row" style="padding-top:1%;">
 
-					<div class="col l3 offset-l1 m6 s12 center" style="margin-top:7px;" >
-						<a href="/"><img class="responsive-img col s4" src="/webimages/About.png" style="padding-top:7.1px;padding-right:23px;" ></a>
-						<a href="http://assoc.cse.nitc.ac.in/">		<img class="responsive-img col s4" src="/webimages/CSEA.png" style="padding:8px;padding-right:22px"></a>
-						<a href="http://minerva.nitc.ac.in/cse/"></a><img class="responsive-img col s4" src="/webimages/CSED.png" style="padding:8px;padding-right:22px"></a>
-					</div>
+					<div class="col l3 offset-l1 m6 s12 center" >
+ 
+
+									<img class="linkgroup" src="/webimages/About.png" />
+								
+										<img class="linkgroup" src="/webimages/CSEA.png" />
+									
+					
+										 <img class="linkgroup" src="/webimages/CSED.png" />
+							
+				</div>
 					<div class="col l2 offset-l1 m6 s12 center">
 					<!--	<span style="font-family:'webfontregular'; font-weight:350; font-size:58pt;color: #FFFFFF;vertical-align:center;">threads.</span>-->
 						<img class="responsive-img" src="/webimages/threads.png" />

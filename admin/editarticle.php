@@ -40,16 +40,18 @@ if(isset($_GET['id']))
     authorbio=$('#authorbio').val();
     photourl=$('#photourl').val();
         date=$('#artdate').val();
+        minute=0;
 var editor = ace.edit("editor");
 
  code = editor.getValue();  
        
-        $.post( "/edition/testarticle.php",{
+        $.post( "/edition/testarticle1.php",{
           title:tbox,
           authorname:authorname,
           authorbio:authorbio,
           authorphoto:photourl,
           content:code,
+          minutes:0,
          artdate:date,
           mode:"edit",
           eid:-2,

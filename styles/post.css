@@ -20,10 +20,36 @@
 	font-style: normal;
 }
 
+
+.linkgroup {
+	height: 36px;
+	width: 70px;
+	margin: 21px 4px 4px 4px;
+}
 .edyear {
 	margin: 0px;
 }
 
+
+.buzz-month{
+	
+	font-size:22px;
+	padding:2px;
+	font-family:webfontregular;
+	
+}
+
+.buzz-card-img{
+	
+	
+	
+}
+
+.buzz-card-txt{
+	
+	
+	
+}
 .dropdown-btn {
 	padding: 10px 8px 10px 10px;
 	text-decoration: none;

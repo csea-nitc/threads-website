@@ -29,7 +29,43 @@ a{
 	text-decoration:none;
 	text-color:black;
 }
+.prev-link a  {
+	float:left;
+	box-shadow: 14px 15px 25px -11px rgba(0, 0, 0, 0.4);
+	width: 230px;
+	background-color: #dddddd;
+	color: #696969;
+	height: 37px;
+	margin: 11% 0% 0% 0%;
+	/* border-style: solid; */
+	font-family: webfontregular;
+	font-size: 14.2pt;
+	padding: 0px 0px 0px 36px;
+}
 
+/*.linkgroups a {
+	float:left;
+	text-decoration:none;
+	width:60%;
+}
+.linkgroups linkicon{
+	
+	float:left;
+	
+}*/
+.linkgroups a{
+	float:left;
+	box-shadow: 14px 15px 25px -11px rgba(0, 0, 0, 0.4);
+	width: 230px;
+	background-color: #dddddd;
+	color: #696969;
+	height: 37px;
+	margin: 5% 0% 0% 0%;
+	/* border-style: solid; */
+	font-family: webfontregular;
+	font-size: 14.2pt;
+	padding: 0px 0px 0px 36px;
+}
 .hide{
 	
 	display:none;
