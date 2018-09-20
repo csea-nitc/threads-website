@@ -1,7 +1,4 @@
-
 	<html>
-
-
 	<head>
 		<title>Threads</title>
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -58,44 +55,48 @@
 
 		
 
-			<div class="row" style="	background: url('/webimages/about.png');	height: 29%;	margin-bottom: 0px;bottom:0px;width:100%;	padding-top: 29px;	background-size: cover;	position: absolute;">
+			<div class="row" style="	background: url('/webimages/about.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
 				<div class="row" style="padding-top:1%;">
 
-					<div class="col l3 offset-l1 m6 s12 center" >
- 
-
-								 
-								
-						<a style="all:unset;cursor:pointer;" href="http://assoc.cse.nitc.ac.in/">		<img class="linkgroup" src="/webimages/CSEA.png" /></a>
-									
-					
-						<a style="all:unset;cursor:pointer;" href="http://minerva.nitc.ac.in/cse/">		 <img class="linkgroup" src="/webimages/CSED.png" /></a>
-							
-				</div>
-					<div class="col l2 offset-l1 m6 s12 center">
-					<!--	<span style="font-family:'webfontregular'; font-weight:350; font-size:58pt;color: #FFFFFF;vertical-align:center;">threads.</span>-->
-						<a href="/"><img class="responsive-img" src="/webimages/threads.png" /></a>
+					<div class="col   s12 center" style="margin-top:24px;" >
+			 
+						<a href="http://assoc.cse.nitc.ac.in/">		<img class="responsive-img col s3 offset-s2" src="/webimages/CSEA.png" style="padding:8px;padding-right:22px"></a>
+						<a href="http://minerva.nitc.ac.in/cse/"><img class="responsive-img col  s3 offset-s2" src="/webimages/CSED.png" style="padding:8px;padding-right:22px"></a>
 					</div>
-					<div class="col l2 offset-l2 m6 s12 center">
+					<div class="col l2 offset-s3 s6 center">
+					<!--	<span style="font-family:'webfontregular'; font-weight:350; font-size:58pt;color: #FFFFFF;vertical-align:center;">threads.</span>-->
+						<a href="/"><img class="responsive-img" src="/webimages/threads.png" style="margin-top:15px;"/></a>
+					</div>
+					<div class="col l2 offset-s3 s6  center" style="margin-top:2px;">
 						<div class="">
 							<div class="col s12">
 								<img class="responsive-img"  src="/webimages/logo.png">
 							</div>
 
-						</div></div>
+						</div>
+
+
+
+
+
+
+
+
+					</div>
+
+
+
 
 				</div>
-				<div class="row s10 offset-s1 col copyrightgroup">
-					<div class="col s12" style="	margin-bottom: 30px;	height: 1px;	background-color: white;	opacity: 0.6;">
+				<div class="row s10 offset-s1 col">
+					<div class="col s12" style="	height: 1px;	background-color: white;	opacity: 0.6;">
 						<hr style="margin-bottom:22px;	height: 1px;	background-color: white;	opacity: 0.6;">
 					</div>
-					<div class="col l12 m12 s12 center" style="margin-bottom:2px;">
+					<div class="col l12 m12 s12 center" style="margin-top:4px;">
 						<img class="responsive-img" src="/webimages/copyright.png">
 					</div>
 				</div>
 			</div>
-		</div>
-
 
 	
 	</body>

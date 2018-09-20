@@ -257,6 +257,27 @@ box-shadow: 10px 10px 107px -1px rgba(0,0,0,0.75);
 			.title:hover {
 				background: none;
 			}
+	.editiontitlemobile 
+{
+	background-color: #dedede;
+	height: auto;
+	font-size: 20.2pt;
+	font-family: webfontregular;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 3.6px;
+	padding-bottom: 3.6px;
+
+	color: #696969;
+	width: 100%;
+	-webkit-box-shadow: 14px 15px 25px -11px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 14px 15px 25px -11px rgba(0, 0, 0, 0.75);
+	box-shadow: 14px 15px 25px -11px rgba(0, 0, 0, 0.75);
+
+				
+			}
+
+
 
 			.editiontitle {
 				color: #def2f1;
