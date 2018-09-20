@@ -3,7 +3,7 @@
 include "common/con.php";
 
 //fetch latest edition and fill placeholders 
-$sql="select * from edition where visible =1 order by year desc , month desc";
+$sql="select * from edition where visible =1 order by year desc , month desc ";
 $edit=$conn->query($sql);  
 ///SELECT convert(datetime, CONCAT('10 ',CONCAT(CONCAT(name,' '),year), 106)
 ?>
@@ -68,24 +68,29 @@ $edit=$conn->query($sql);
     </div>
 		-->
 	<?php
-		$ii=0;
-		while($row=$edit->fetch_assoc())
-		{
+
+		$row=$edit->fetch_assoc();
+		
 		
 		?>
 		
-		       <div class="row <?php if($ii!=0){echo "hide";}?>">
-      <div class="col m8 s12 v-currentedition-box offset-m2">
-      <div class="col m6 s12">
-             <div class="center-align" style="font-size:800%; font-family: 'vogueregular';margin-bottom:-18%;">
-							 <?php echo $row["name"];  ?> </div><div class="center-align" style="font-size: 25pt;	font-family: 'vogueregular';	position: relative;	margin-top: 16px;	margin-left: -28.1%;" >        
-          <?php echo $row["year"];  ?>
+		<div style="overflow-y:scroll; max-height:55%;">
+		       <div class="row">
+      <div class="col s10 offset-s1 l8 offset-l2 v-currentedition-box ">
+      <div class="col  offset-l2 l4 s12 m12 ">
+				
+				
+				
+						<span style="	font-size: 10em;	font-family: vogueregular;" id="ednametxt"> <?php echo $row["name"];  ?> </span>
+						<span style="	font-size: 236%;	display: block;	margin-top: -71px;	margin-left: 3%;	font-family: vogueregular;	position: relative;	/* position: initial; */	/* top: 0px; */" id="edyeartxt"><?php echo $row["year"];  ?></span>
+             
+          
         </div>
         
  
-           </div>
-        <div class="col  offset-m1 m4 s12">
-					<div style="width:100%;height:100%;margin-top:6%;">
+         
+        <div class="col s12 m12  offset-l1  l5" style="margin-bottom:13">
+					<div style="margin-top:9%;">
 						<div class="linkgroups">
 							
 								
@@ -100,39 +105,32 @@ $edit=$conn->query($sql);
 						<a    href="<?php echo $row["pdflink"]; ?>">  Download PDF 
 						
 					 </a>  </div>
-			
- 
-								 <?php
-																							
-																						 }
-								 ?>
-								 
-							
-						 
+			<?php
+																											 
+																											}
 						
-						<?php if($ii==0){ ?>
+						?>
+ 
+						
+					
 						<!--- only for first-->
 					
-							
+						<!--	
 					<div class="prev-link">
         		<a   href="/prev.php" >Previous Edition</a></div>
-				
-					<?php }  ?>
+				-->
+
 					
 					</div>
            
 					</div>
         </div>
       </div>
+		</div>
     </div>
 		
 		
-		
-		<?php
-			$ii=$ii+1;
-		}
-			
-			?>
+	
 <div class="newfooter" >
   <div class="row" style="padding-top:22px;">
    <div class="col s2 m1 l1 offset-l2 offset-m2 offset-s1" style='margin-left:14.1%;	padding-top: -1px;	padding: 1% 1% 1% 1%;'>
@@ -145,8 +143,10 @@ $edit=$conn->query($sql);
 			 <a href="http://minerva.nitc.ac.in/cse/"><img class="responsive-img" src="/webimages/CSED.png"></a>
      </div>
     
-        <div class="col s4 m3 l4 offset-s1 offset-l3 offset-m2"  > 
-        <img class="responsive-img" src="/webimages/logo.png" style="margin-left:13%;" >
+        <div class="col s5 m3 l4  offset-l3 offset-m2"  > 
+					
+        <img class="show-on-large hide-on-med-and-down responsive-img" src="/webimages/logo.png" style="margin-left:13%;" >
+					<img class="hide-on-large-only show-on-medium-and-down responsive-img" src="/webimages/logo.png" style="margin-left:13%;margin-top:6%;" >
     </div>
    
   </div>

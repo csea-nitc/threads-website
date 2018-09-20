@@ -19,7 +19,19 @@
 	font-weight: normal;
 	font-style: normal;
 }
+.content-box-mobile{
+	
+	
 
+	font-size: 13pt;
+	line-height: 176%;
+	letter-spacing: 0px;
+	word-spacing: 2px;
+	width: 100%;
+	padding-top: 41px;
+	/* text-align: justify; */
+
+}
 
 .linkgroup {
 	height: 36px;
@@ -30,24 +42,33 @@
 	margin: 0px;
 }
 
-
-.buzz-month{
-	
-	font-size:22px;
-	padding:2px;
-	font-family:webfontregular;
-	
+ 
+.threads-logo-mobile {
+	padding-top: 14px;
+	/* height: 100px; */
+	width: 105px;
+	margin-left: 24%;
 }
-
 .buzz-card-img{
 	
+	height:100%;
+	width:100%;
+}
+#edname{
 	
+color:black;
+	font-size:20px;
+	padding-bottom:19px;
+	font-family:webfontregular;
 	
 }
 
 .buzz-card-txt{
 	
-	
+
+	font-family:webfontregular;
+	font-size:15px;
+		
 	
 }
 .dropdown-btn {
@@ -237,7 +258,7 @@ p:first-of-type::first-letter {
 
 #navbarentry-wrap {
 	overflow-y:scroll;
-	max-height: 340pt;
+	max-height: 250pt;
 	font-size: 12pt;
 	font-family: webfontregular;
 	vertical-align: middle;
@@ -266,7 +287,7 @@ p:first-of-type::first-letter {
 
 .copyrightgroup {
 	position: absolute;
-	bottom: 19px;
+	bottom: -8.1%;
 }
 
 .navbaritem-selected {

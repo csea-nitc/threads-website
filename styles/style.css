@@ -60,7 +60,7 @@ a{
 	background-color: #dddddd;
 	color: #696969;
 	height: 37px;
-	margin: 5% 0% 0% 0%;
+	margin: 5% 0% 0% 5%;
 	/* border-style: solid; */
 	font-family: webfontregular;
 	font-size: 14.2pt;
@@ -184,7 +184,7 @@ box-shadow: 10px 10px 107px -1px rgba(0,0,0,0.75);
         
 			}
 
-			a {
+		/*	a {
 				padding: 6px 8px 6px 16px;
 				text-decoration: none;
 				font-size: 20px;
@@ -197,7 +197,7 @@ box-shadow: 10px 10px 107px -1px rgba(0,0,0,0.75);
 				cursor: pointer;
 				outline: none;
 			}
-
+*/
 			a:hover .selectedcolor {
 				color: #003b4f;
 			}
@@ -505,7 +505,8 @@ max-width:30%;
 
 .v-currentedition-box{
   padding:14px;
-  height:35%;
+	min-height:1px;
+	overflow:hidden;
   margin:14px;
   background: rgb(255,255,255); /* Old browsers */
 background: -moz-linear-gradient(right, rgba(255,255,255,1) 18%, rgba(255,255,255,1) 62%); /* FF3.6-15 */

@@ -96,7 +96,7 @@ $va=$_POST;
 				<div class="col s8">
 
 					<div class="row">
-						<div class="col">
+						<div class="col s12">
 							<div class="article-box" id="article-box">
 								<div class="title-box" id="title-box">
 								</div>

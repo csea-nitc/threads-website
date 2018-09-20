@@ -30,11 +30,11 @@
       <div class="row">
         
         <div class="col offset-l4 l4">
-          <img class="responsive-img" src="/webimages/About Threads.png"/>
+          <img class="responsive-img" style="margin-bottom:20px" src="/webimages/About Threads.png"/>
         </div>
     </div>
     <div class="row">
-      <div class="col offset-l4 l5" style="font-size:22px; font-family:webfontregular;">
+      <div class="col offset-l3 l6" style="font-size:22px; font-family:webfontregular;">
           
       orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.ore
         
@@ -42,7 +42,7 @@
       </div>
     </div>
       
-      			<div class="row" style="margin-top:39px;margin-left:19%;margin-bottom:10px;">
+      			<div class="row " style="margin-top:25px;margin-left:15%;margin-bottom:40px;">
 
 										<div class="dot">
 
@@ -58,23 +58,23 @@
 
 		
 
-			<div class="row" style="	background: url('/webimages/about.png');	height: 195px;	margin-bottom: 0px;bottom:0px;width:100%;	padding-top: 29px;	background-size: cover;	position: static;">
+			<div class="row" style="	background: url('/webimages/about.png');	height: 29%;	margin-bottom: 0px;bottom:0px;width:100%;	padding-top: 29px;	background-size: cover;	position: absolute;">
 				<div class="row" style="padding-top:1%;">
 
 					<div class="col l3 offset-l1 m6 s12 center" >
  
 
-									<img class="linkgroup" src="/webimages/About.png" />
+								 
 								
-										<img class="linkgroup" src="/webimages/CSEA.png" />
+						<a style="all:unset;cursor:pointer;" href="http://assoc.cse.nitc.ac.in/">		<img class="linkgroup" src="/webimages/CSEA.png" /></a>
 									
 					
-										 <img class="linkgroup" src="/webimages/CSED.png" />
+						<a style="all:unset;cursor:pointer;" href="http://minerva.nitc.ac.in/cse/">		 <img class="linkgroup" src="/webimages/CSED.png" /></a>
 							
 				</div>
 					<div class="col l2 offset-l1 m6 s12 center">
 					<!--	<span style="font-family:'webfontregular'; font-weight:350; font-size:58pt;color: #FFFFFF;vertical-align:center;">threads.</span>-->
-						<img class="responsive-img" src="/webimages/threads.png" />
+						<a href="/"><img class="responsive-img" src="/webimages/threads.png" /></a>
 					</div>
 					<div class="col l2 offset-l2 m6 s12 center">
 						<div class="">

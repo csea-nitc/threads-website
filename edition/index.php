@@ -156,7 +156,7 @@ $curname=substr($cureditrow["name"],0,3);
 				<div class="col s8">
 
 					<div class="row">
-						<div class="col">
+						<div class="col s12">
 							<div class="article-box" id="article-box">
 								<div class="title-box" id="title-box">
 								</div>
@@ -231,7 +231,7 @@ $curname=substr($cureditrow["name"],0,3);
 				<div class="row" style="padding-top:1%;">
 
 					<div class="col l3 offset-l1 m6 s12 center" style="margin-top:7px;" >
-						<a href="/"><img class="responsive-img col s4" src="/webimages/About.png" style="padding-top:7.1px;padding-right:23px;" ></a>
+						<a href="/about.php"><img class="responsive-img col s4" src="/webimages/About.png" style="padding-top:7.1px;padding-right:23px;" ></a>
 						<a href="http://assoc.cse.nitc.ac.in/">		<img class="responsive-img col s4" src="/webimages/CSEA.png" style="padding:8px;padding-right:22px"></a>
 						<a href="http://minerva.nitc.ac.in/cse/"></a><img class="responsive-img col s4" src="/webimages/CSED.png" style="padding:8px;padding-right:22px"></a>
 					</div>
@@ -337,13 +337,30 @@ $curname=substr($cureditrow["name"],0,3);
 					$('#viewcount').html(article.viewcount + " Views");
 					$('#content-box').html(article.content);
 					$('#authorbio').html(article.authorshortbio);
-					if(article.authorname!=""){
+					if(article.authorname!==""){
+						$('#readmin').show();
+						$('#artdate').show();
 					$('#readmin').html(article.minutes +" min read");
 					$('#artdate').html(article.datetxt);
 					}
+					else{
+						
+				$('#readmin').hide();
+						$('#artdate').hide();
+						
+					}
 					$('#authorname').html(article.authorname);
-					if (article.authorname != "nil") {
-						jQuery("#authorphoto").attr("src", article.authorphoto)
+					if (article.authorname != "") {
+						jQuery("#authorphoto").attr("src", "");
+						
+						jQuery("#authorphoto").attr("src", article.authorphoto);
+						
+						$('#authorphoto').show();
+
+					}
+					else{
+						$('#authorphoto').hide();
+						
 					}
 					//	$('#authorbio').append(div);
 				});

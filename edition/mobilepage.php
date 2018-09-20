@@ -19,40 +19,59 @@ $cureditrow=$curedit->fetch_assoc();
 
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<title>Threads</title>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+		<link href="/styles/post.css" rel="stylesheet">
+		<link href="/styles/v-style.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+		
 </head>
 
 <body>
-<nav  class="blue darken-3"> 
+	<style>
+
+	</style>
+<nav class="topnavbar"  style="background : url('/styles/topbar.png'); background-size:cover;"> 
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  
+	
+  		<a href="/"><img class="responsive-img threads-logo-mobile" src="/styles/threads-logo.png"></a>
   
   <!-- navbar content here  --> </nav>
 
   <ul id="slide-out" class="sidenav">
-    <li><div class="user-view blue darken-3">
+    <li><div class="user-view" style="background : url('/styles/topbar.png'); background-size:cover;">
    <!--   <div class="background">
         <img src="images/office.jpg">
       </div> -->
-      <a href="#user"><img class="circle" src="/webimages/CSED-logo.png"></a>
-      <a href="#name"><span class="name">AUG 2018</span></a>
+   
+    <span class="name" id="edname">AUG 2018</span>
     
     </div></li>
+
  
-    <li><a href="#!">Article Title 1 </a></li>
-     <li><a href="#!">Article Title 2 big text good </a></li>
-     <li><a href="#!">Article Title 3 </a></li>
-     <li><a href="#!">Article Title 4 </a></li>
-     <li><a href="#!">Article Title 5 </a></li>
-    <li><div class="divider"></div></li>
+    
+
+	 <li id="artli"><div    class="divider"></div></li>
  <!-- Dropdown Trigger -->
-    <li>
-  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>EDITIONS</a>
+    <li style="position:relative;bottom:0px">
+  <a class='dropdown-trigger btn ' href='#' data-target='dropdown1'>EDITIONS</a>
 
   <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
+  <ul id='dropdown1' class='blue darken-2 dropdown-content'>
     
     <?php
     
+		$i=0;
 																while($w=$edit->fetch_assoc())
 																{
                                   
@@ -67,22 +86,21 @@ $cureditrow=$curedit->fetch_assoc();
                                   $cyear=$w["year"];
 																			?>
                                                     
-    <li onclick="initpage(<?php echo $curid; ?>,-1,true,this.getAttribute('edname'),this.getAttribute('eyear'));" edname="<?php echo  substr($cname,0,3);; ?>" eyear="<?php echo  $cyear; ?>"><a href="#!"><?php  echo $w["name"];	?></a></li>
-    
+    <li onclick="initpage(<?php echo $curid; ?>,-1,true,this.getAttribute('edname'),this.getAttribute('eyear'));" edname="<?php echo  substr($cname,0,3);?>" eyear="<?php echo  $cyear; ?>"><a href="#!"><?php  echo $w["name"]." ".$w["year"];	?></a></li>
   
         
+    
 												
 
 																<?php
 
 
-
 																}
 																?>            
     
-    ?>
-   
+
     <li class="divider" tabindex="-1"></li>
+   
 
   </ul>
     </li>
@@ -95,109 +113,159 @@ $cureditrow=$curedit->fetch_assoc();
  
 <div class="row">
  
-    <div class="container">
-    
-    
 
-	    <div class="col l10 m10 s10">
-                <div class="row">
-                    
-                    <div class="col offset-s6 s4">
-                        <div class="edyear">
-                            
-                        <span class="top-edition-text">AUG</span>
-                                        <span class="top-edition-text">.</span>
-                        <span class="top-edition-year-text">2018</span>
-                
-                        </div>
-                        </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                                    <div class="article-box" id="article-box">
-                                        <div class="title-box" id="title-box">
-                                        </div>
-                                 <div class="authordetails" id="authordetails">
-                                                    <div class="authorphoto" id="authorphoto">
-                                                    </div>
-                                                    <div class="authorname" id="authorname">Arjun Suresh
-                                                    </div>
-                                                    <div class="authorbio" id="authorbio">Something Something
-                                                    </div>
-                                        </div>
-                                            
-                                        <div class="content-box" id="content-box">
-                                        </div>
-                                        
-            
-        
-        </div>
-            </div>
-                
-                
-                                    </div>
- 
-        </div>
-    </div>
- 
- 
- 
- 
- 
- 
- 
- 
- 
-    </div>
-    
- 
-  
-  
-  
-  
-  
-  
-<script
-			  src="https://code.jquery.com/jquery-3.3.1.min.js"
-			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous"></script>
-  
-<!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+				<div class="col s12">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+					<div class="row">
+						<div class="col">
+							<div class="article-box" id="article-box">
+								<div class="title-box" id="title-box">
+								</div>
+								<div class="authordetails" id="authordetails">
+
+									
+									<div class="authornameandphoto" style="/* float: right; */	width: 100%;letter-spacing: -1px;	padding-left: 1%;	margin-top: 13px;">										<img height="70" width="70" class="circle authorphoto responsive-img" id="authorphoto" style="margin-left: 0px;margin-right: 3%;loat: right;height: 80px;width: 70px;" src="" />
+										<div class="authortext" style="	float: left;	margin-right: 0px;	padding-top: 11px;	width: 75%;	max-width: 75%;">
+
+											<span class="authorname" id="authorname">
+                                                    </span>
+
+
+
+
+											<div class="authorbio" id="authorbio"> </div>
+										</div>
+										
+										
+									
+																											 
+										</div>
+									</div>
+									<div class="row dateread">
+											
+											<span class="col s3 artdate" id="artdate">
+												
+											</span>
+											<span class="col s4 readmin" id="readmin">
+											
+											</span>
+
+																										 </div>
+
+									<div class="content-box" id="content-box" style="padding-top:0px;">
+									</div>
+									<div class="row" style="margin-top:39px;">
+
+										<div class="dot">
+
+										</div>
+										<div class="dot">
+
+										</div>
+										<div class="dot ">
+
+										</div>
+									</div>
+
+
+
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+ 
+
+			<div class="row" style="	background: url('/webimages/BG.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
+				<div class="row" style="padding-top:1%;">
+
+					<div class="col   s12 center" style="margin-top:24px;" >
+						<a href="/"><img class="responsive-img col s3" src="/webimages/About.png" style="padding-top:7.1px;padding-right:23px;" ></a>
+						<a href="http://assoc.cse.nitc.ac.in/">		<img class="responsive-img col s3 offset-s1" src="/webimages/CSEA.png" style="padding:8px;padding-right:22px"></a>
+						<a href="http://minerva.nitc.ac.in/cse/"></a><img class="responsive-img col  s3 offset-s1" src="/webimages/CSED.png" style="padding:8px;padding-right:22px"></a>
+					</div>
+					<div class="col l2 offset-s3 s6 center">
+					<!--	<span style="font-family:'webfontregular'; font-weight:350; font-size:58pt;color: #FFFFFF;vertical-align:center;">threads.</span>-->
+						<img class="responsive-img" src="/webimages/threads.png" style="margin-top:15px;"/>
+					</div>
+					<div class="col l2 offset-s3 s6  center" style="margin-top:2px;">
+						<div class="">
+							<div class="col s12">
+								<img class="responsive-img"  src="/webimages/logo.png">
+							</div>
+
+						</div>
+
+
+
+
+
+
+
+
+					</div>
+
+
+
+
+				</div>
+				<div class="row s10 offset-s1 col">
+					<div class="col s12" style="	height: 1px;	background-color: white;	opacity: 0.6;">
+						<hr style="margin-bottom:22px;	height: 1px;	background-color: white;	opacity: 0.6;">
+					</div>
+					<div class="col l12 m12 s12 center" style="margin-top:4px;">
+						<img class="responsive-img" src="/webimages/copyright.png">
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 		<script>
-  
-   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
-
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  // var collapsibleElem = document.querySelector('.collapsible');
-  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-      document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, options);
-  });
-
-  // Or with jQuery
-
-  $('.dropdown-trigger').dropdown();
-  
-      
-      	function loadarticle(id) {
-        $('.dropdown-btn-selected').removeClass().addClass("dropdown-btn");
-        $('[eid='+id+']').removeClass();
-        $('[eid='+id+']').addClass("dropdown-btn-selected")
+			document.addEventListener('DOMContentLoaded', function() {
+				var elems = document.querySelectorAll('.dropdown-trigger');
+				options = {};
+				var instances = M.Dropdown.init(elems, options);
+			});
+			/* 
+     var dropdown = document.getElementsByClassName("dropdown-btn");
+			var i;
+			
+			for (i = 0; i < dropdown.length; i++) {
+			  dropdown[i].addEventListener("click", function() {
+			    this.classList.toggle("active");
+			    var dropdownContent = this.nextElementSibling;
+			    var current = document.getElementsByClassName("selected");
+			    if(current.length>0){
+			    current[0].className = current[0].className.replace(" sidenav-selected", "");}
+			    this.className += " sidenav-selected"; //<!--Dude, I copied and refined the code from www.w3schools.com/howto/tryit.asp?filename=tryhow_js_active_element  but it is not working, can you check?-->
+			    if (dropdownContent.style.display === "block") {
+			      dropdownContent.style.display = "none";
+			   
+			    } else {
+			      dropdownContent.style.display = "block";
+			    
+			    }
+			  });
+			}*/
+ 
+			function loadarticle(id) {
+			    $('.sidenav').sidenav('close');
+				$('#articleentry.navbaritem-selected').removeClass().addClass("navbaritem");
+				$('[eid=' + id + ']').removeClass();
+				$('[eid=' + id + ']').addClass("navbaritem-selected")
 				/*
   
 				<div class="article" id="article">
@@ -216,100 +284,135 @@ $cureditrow=$curedit->fetch_assoc();
   
   
 				*/
- 
+
 				$.get("/getarticle.php?id=" + id, function(data) {
-  
+
 					var article = JSON.parse(data);
 
 					var i;
 
 					$('#title-box').empty();
-					
+
 					$('#content-box').empty();
 					$('#title-box').html(article.title);
 
-					$('#viewcount').html(article.viewcount+" Views");
+					$('#viewcount').html(article.viewcount + " Views");
 					$('#content-box').html(article.content);
 					$('#authorbio').html(article.authorshortbio);
-			
-				$('#authorname').html(article.authorname);
-				
-					$('#authorphoto').html();
-						var div = $("<img>", {
-							"src":article.authorphoto
-									});
-					
-				//	$('#authorbio').append(div);
+					if(article.authorname!==""){
+						$('#readmin').show();
+						$('#artdate').show();
+							$('#authordetails').show();
+					$('#readmin').html(article.minutes +" min read");
+					$('#artdate').html(article.datetxt);
+					}
+					else{
+						$('#authordetails').hide();
+						$('#readmin').hide();$('#readmin').hide();
+						
+					}
+					$('#authorname').html(article.authorname);
+					if (article.authorname != "nil") {
+						jQuery("#authorphoto").attr("src", "");
+						jQuery("#authorphoto").attr("src", article.authorphoto);
+					}
+					//	$('#authorbio').append(div);
 				});
 				$('#article-box').show();
 				$('#articles').hide();
-				
-			
+
+
 			}
-			function loadarticlelist(id,loadfirstarticle) {
-			 
-        
-      
-        
-        
-        $('.dropdown-btn').remove();
-         $('.dropdown-btn-selected').remove();
-			
+
+			function loadarticlelist(id, loadfirstarticle) {
+				//
+				//$('#editionentry.navbaritem-selected').removeClass().addClass("navbaritem");
+				//$('[edid=' + id + ']').removeClass();
+				//$('[edid=' + id + ']').addClass("navbaritem-selected");
+
+				$('[type=article]').remove();
 				$.get("../getarticlelist.php?id=" + id, function(data) {
 
 					var articles = JSON.parse(data);
-					
+
 					var i;
+					var ind;
+					for (i = 0; i < articles.length; i++) {
+						var title = $(document.createElement('a')).attr({
+							id: "articleentry",
+							href:"#!",
+							class:"truncate",
+							eid: articles[i].id,
+							onclick: "loadarticle(" + articles[i].id + ");"
+						});
+						if (loadfirstarticle == false && i == 0) {
+							title.addClass("navbaritem-selected");
 
-					 
-					for (i = 0; i < articles.length; i++) { 
-						var title = $(document.createElement('div')).attr({eid:articles[i].id,onclick:"loadarticle("+articles[i].id+");"});
-						if(loadfirstarticle&&i==0){
-            title.addClass("dropdown-btn-selected");
-              loadarticle(articles[i].id);
-            }
-              else{title.addClass("dropdown-btn");
-            }
-            
+						} else {
+							title.addClass("navbaritem");
+						}
+
 						title.html(articles[i].title);
-						$('#article-nav').append(title);
-		
-					}
+						var li=$(document.createElement('li')).attr({type:"article"});
+						li.append(title);
+					li.insertBefore('#artli');
 
+					}
+					if (loadfirstarticle) {
+						loadarticle(articles[0].id);
+					}
 				});
 
 
 
 
 			}
-      
-		 function selectarticle(idd)
-			{
-         
-				 loadarticle(idd)
-				
+
+			function selectarticle(idd) {
+
+				loadarticle(idd)
+
 			}
-		
-			
-			function initpage(editionid,articleid,loadfirstarticle,edname,edyear)
-			{
-      
-        $('#top-edition-text').html(edname);
-        $('#top-edition-year').html(edyear);
-				
-        loadarticlelist(editionid,loadfirstarticle);
-        if(loadfirstarticle==false){
-				          selectarticle(articleid);
+
+
+			function initpage(editionid, articleid, loadfirstarticle, edname, edyear) {
+
+				$('#edname').html(edname+" " +edyear);
+				//$('#edyeartxt').html(edyear);
+
+				loadarticlelist(editionid, loadfirstarticle);
+				if (loadfirstarticle == false) {
+					selectarticle(articleid);
 				}
 			}
-			$( document ).ready(function() {
-     
-        //load firstg current edition
-        initpage(10,11,false,"<?php echo $curname; ?>","<?php echo $curyear; ?>");
-});
-      
-  </script>
- 
-</body>
 
-</html>
+			$(document).ready(function() {
+
+				/*	$(window).scroll(function(){
+    $("#floatsidebar").css("margin-top",Math.max(-450,0-$(this).scrollTop()));
+						 console.log($(document).height()-150+" :"+$(this).scrollTop());
+			   if($(this).scrollTop()>($(document).height()-150))
+						{
+							$("#floatsidebar").hide();
+					 }
+					else{
+						  $("#floatsidebar").show();
+					}
+});*/
+				//load firstg current edition
+				 $('.sidenav').sidenav({outDuration:100,inDuration:150});
+				
+				
+    
+   
+    
+
+     
+
+
+				initpage(<?php echo $cureditrow['id']; ?>, -11, true, "<?php echo $curname; ?>", "<?php echo $curyear; ?>");
+			});
+		</script>
+	</body>
+
+	</html>
