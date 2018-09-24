@@ -22,6 +22,7 @@ $edit=$conn->query($sql);
 		<meta content="utf-8" http-equiv="encoding">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+		<link rel="icon" href="/webimages/favicon.png?v=1.1"> 
 		<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 		<link href="/styles/post.css" rel="stylesheet">
 		<link href="/styles/style.css" rel="stylesheet">

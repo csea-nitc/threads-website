@@ -57,7 +57,7 @@ $curname=substr($cureditrow["name"],0,3);
 
 	<body>
 		<!-- <div class="header">-->
-		<div class="row threads-ribbon" style="background : url('/styles/topbar.png'); background-size:cover; ">
+		<div class="row threads-ribbon" style="background : url('/webimages/topbar.png'); background-size:cover; ">
 			<div class="col l12 m12 s12">
 
 				<!--<img class="threads-ribbon" style="background-size:cover" src="/styles/topbar.png"/>-->

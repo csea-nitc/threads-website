@@ -23,7 +23,7 @@ $cureditrow=$curedit->fetch_assoc();
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<meta name="theme-color" content="#305b87">
-
+<link rel="icon" href="/webimages/favicon.png?v=1.1"> 
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -42,7 +42,7 @@ $cureditrow=$curedit->fetch_assoc();
 	<body>
 		<style>
 		</style>
-		<nav class="topnavbar" style="background : url('/styles/topbar.png'); background-size:cover;position:fixed;">
+		<nav class="topnavbar" style="background : url('/webimages/topbar.png'); background-size:cover;position:fixed;">
 			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
 			<a href="/"><img class="responsive-img threads-logo-mobile" src="/styles/threads-logo.png"></a>

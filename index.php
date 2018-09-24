@@ -17,6 +17,7 @@ $edit=$conn->query($sql);
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="/webimages/favicon.png?v=1.1"> 
 	 
 		<link href="/styles/style.css" rel="stylesheet">
  
@@ -101,7 +102,7 @@ $edit=$conn->query($sql);
 						
 						  <?php
 								
-									if ($row["pdflink"]!="nil" or true ){ ?>		<div class="linkgroups">
+									if ($row["pdflink"]!="nil"  ){ ?>		<div class="linkgroups">
 						<a    href="<?php echo $row["pdflink"]; ?>">  Download PDF 
 						
 					 </a>  </div>
@@ -151,19 +152,6 @@ $edit=$conn->query($sql);
    
   </div>
     </div>
-    <script>
-		
-		function loadprev()
-			{
-				
-				$(".hide").removeClass().addClass("row");
-			$('#prevbutton').hide();
-				  $("body").animate({
-          scrollTop:  300
-     });
-				
-			}
-		
-		</script>
+ 
   </body>
 </html>

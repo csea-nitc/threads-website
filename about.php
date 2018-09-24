@@ -8,6 +8,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 		<link href="/styles/post.css" rel="stylesheet">
 		<link href="/styles/style.css" rel="stylesheet">
+		
+		<link rel="icon" href="/webimages/favicon.png?v=1.1"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 	
    <!-- Compiled and minified CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
@@ -33,7 +35,8 @@
     <div class="row">
       <div class="col offset-l3 l6" style="font-size:22px; font-family:webfontregular;">
           
-      orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.ore
+				Threads, the official newsletter of the Computer Science and Engineering Department of NIT Calicut, is an initiative by the Computer Science and Engineering Association with amble support from the staff and students of the department. We aim to encourage technical reflections, innovations and conversations by facilitating the exchange of ideas in a fellowship of students, staff and alumni. We hope to create a narrative that inspires novice engineers and foster their creative endeavors and to build a space where our expert practitioners can advice and offer the former a glimpse into their professional career. We extend an invitation to all who wish to be a part of the dialogue that we hope to continue with Threads.
+
         
       
       </div>
