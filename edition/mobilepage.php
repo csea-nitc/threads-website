@@ -40,8 +40,7 @@ $cureditrow=$curedit->fetch_assoc();
 	</head>
 
 	<body>
-		<style>
-		</style>
+	 
 		<nav class="topnavbar" style="background : url('/webimages/topbar.png'); background-size:cover;position:fixed;">
 			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
@@ -209,7 +208,7 @@ $cureditrow=$curedit->fetch_assoc();
 		<div class="row" id="bottombar" style="	background: url('/webimages/BG.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
 			<div class="row" style="margin-bottom:0px;">
 
-				<div class="col   s12 center" style="margin-top:24px;margin-left:20px;">
+				<div class="col   s11 offset-s1 center" style="margin-top:24px;">
 					<a href="/about.php"><img class="responsive-img col s3" src="/webimages/About.png" style="padding-top:7.1px;padding-right:23px;" ></a>
 					<a href="http://assoc.cse.nitc.ac.in/">		<img class="responsive-img col s3 offset-s1" src="/webimages/CSEA.png" style="padding:8px;padding-right:22px"></a>
 					<a href="http://minerva.nitc.ac.in/cse/"></a><img class="responsive-img col  s3 offset-s1" src="/webimages/CSED.png" style="padding:8px;padding-right:22px"></a>
