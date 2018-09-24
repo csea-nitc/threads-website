@@ -58,10 +58,10 @@
 
 		
 
-			<div class="row" style="	background: url('/webimages/about.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
+			<div class="row" style="width:100%;	background: url('/webimages/about.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
 				<div class="row" style="padding-top:1%;">
 
-					<div class="col   s12 center" style="margin-top:24px;" >
+					<div class="col offset-l1 l4 s12 center" style="margin-top:24px;" >
 			 
 						<a href="http://assoc.cse.nitc.ac.in/">		<img class="responsive-img col s3 offset-s2" src="/webimages/CSEA.png" style="padding:8px;padding-right:22px"></a>
 						<a href="http://minerva.nitc.ac.in/cse/"><img class="responsive-img col  s3 offset-s2" src="/webimages/CSED.png" style="padding:8px;padding-right:22px"></a>
@@ -70,7 +70,7 @@
 					<!--	<span style="font-family:'webfontregular'; font-weight:350; font-size:58pt;color: #FFFFFF;vertical-align:center;">threads.</span>-->
 						<a href="/"><img class="responsive-img" src="/webimages/threads.png" style="margin-top:15px;"/></a>
 					</div>
-					<div class="col l2 offset-s3 s6  center" style="margin-top:2px;">
+					<div class="col l2 offset-l1 offset-s3 s6  center" style="margin-top:12px;">
 						<div class="">
 							<div class="col s12">
 								<img class="responsive-img"  src="/webimages/logo.png">
@@ -91,14 +91,18 @@
 
 
 				</div>
-				<div class="row s10 offset-s1 col">
+
+					<div class="row s10 offset-s1 col"  style="padding-top:5%;">
 					<div class="col s12" style="	height: 1px;	background-color: white;	opacity: 0.6;">
 						<hr style="margin-bottom:22px;	height: 1px;	background-color: white;	opacity: 0.6;">
 					</div>
-					<div class="col l12 m12 s12 center" style="margin-top:4px;">
+					<div class="col l12 m12 s12 center" style="margin-top:24px;">
 						<img class="responsive-img" src="/webimages/copyright.png">
 					</div>
 				</div>
+					
+	
+				
 			</div>
 
 	

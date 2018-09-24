@@ -49,55 +49,66 @@ $edit=$conn->query($sql);
 
 
  <h4 class="center-align" id="title-box">
-    Previous Editions
+    Editions
     </h4>
 
-
-<?php
-		$ii=0;
-		while($row=$edit->fetch_assoc())
-		{
+	<?php
+while
+		($row=$edit->fetch_assoc()){
+		
 		
 		?>
 		
-		       <div class="row <?php if($ii==0&&false){echo "hide";}?>">
-      <div class="col m8 s12 v-currentedition-box offset-m2">
-      <div class="col m6 s12">
-             <div class="center-align" style="font-size:800%; font-family: 'vogueregular';margin-bottom:-18%;">
-							 <?php echo $row["name"];  ?> </div><div class="center-align" style="	font-size: 25pt;	font-family: 'vogueregular';	position: relative;	margin-top: 46px;	margin-left: -119px;" >        
-          <?php echo $row["year"];  ?>
+		 
+		       <div class="row">
+      <div class="col s10 offset-s1 l8 offset-l2 v-currentedition-box ">
+      <div class="col  offset-l2 l4 s12 m12 ">
+				
+				
+				
+						<span style="	font-size: 10em;	font-family: vogueregular;" id="ednametxt"> <?php echo $row["name"];  ?> </span>
+						<span style="	font-size: 236%;	display: block;	margin-top: -71px;	margin-left: 3%;	font-family: vogueregular;	position: relative;	/* position: initial; */	/* top: 0px; */" id="edyeartxt"><?php echo $row["year"];  ?></span>
+             
+          
         </div>
         
  
-           </div>
-        <div class="col  offset-m2 m3 s12" style="margin-top:20px;">
-					
-           
-        					<a href="<?php echo "/edition/?id=".$row["id"];  ?>" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">pageview</i>Read Online</a>
-							 
+         
+        <div class="col s12 m12  offset-l1  l5" style="margin-bottom:13">
+					<div style="margin-top:9%;">
+						<div class="linkgroups">
+							
+								
+								<a href="<?php echo "/edition/?id=".$row["id"];  ?>" >Read Online
+							
+								
+	</a></div>
+						
 						  <?php
 								
-									if ($row["pdflink"]!="nil"){ ?>		<a href="<?php echo $row["pdflink"]; ?>" class="waves-effect waves-light btn-small blue darken-3"><i class="material-icons left">file_download</i>Download PDF</a>   
-								 <?php
-																							
-																						 }
-								 ?>
-								 
+									if ($row["pdflink"]!="nil"  ){ ?>		<div class="linkgroups">
+						<a    href="<?php echo $row["pdflink"];  ?> ">  Download PDF 
+						
+					 </a>  </div>
+						<?php } ?>
 							
-						 
-			
+					</div>
+           
 					</div>
         </div>
       </div>
-    </div>
 		
+ 
 		
+						
+			<?php
+																											 
+																											}
+						
+						?>
+ 
+						
 		
-		<?php
-			$ii=$ii+1;
-		}
-			
-			?>
 
 			<div class="row" style="	background: url('/webimages/BG.png');	height: 266px;	margin-bottom: 0px;	padding-top: 29px;	background-size: cover;	position: relative;">
 				<div class="row" style="padding-top:1%;">
@@ -135,7 +146,7 @@ $edit=$conn->query($sql);
 					</div>
 				</div>
 			</div>
-		</div>
+
 
 
 	
