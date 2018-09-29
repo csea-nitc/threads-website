@@ -18,6 +18,14 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+function showcredits() {
+  $("#sitecredits").removeClass("fadeout").addClass("fadein");
+  return false;
+}
+
+</script>
 	</head>
 
 	<body>
@@ -59,7 +67,43 @@
 		
 
 			<div class="row" style="width:100%;	background: url('/webimages/about.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
-				<div class="row" style="padding-top:1%;">
+
+<div  id="sitecredits">
+      <center><span style="font-weight:bolder;font-size:24px">Developers</span></center>
+      <div class="flexbox" style="padding: 30px 0px 0px 0px;">
+        <div class="contact_holder_small" style="width: 160px;">
+          <center><div class="pic_small" style="background-image: url(img/abhi.jpeg)"></div></center>
+          <center><div class="name_small">Abhiram Haridas</div></center>
+          <center>
+            <div class="contact_link">
+              <a href="https://www.linkedin.com/in/abhiram-haridas" title="https://www.linkedin.com/in/abhiram-haridas" class="link-mod" target="_blank"><div class="contact_linkedin"></div></a>
+              <a href="mailto:abhiram.haridas@gmail.com" title="abhiram.haridas@gmail.com" class="link-mod"><div class="contact_mail"></div></a>
+            </div>
+          </center>
+        </div>
+        <div class="contact_holder_small" style="width: 160px;">
+          <center><div class="pic_small" style="background-image: url(img/karthik.png)"></div></center>
+          <center><div class="name_small">Ammanamanchi Sai Karthik</div></center>
+          <center>
+            <div class="contact_link">
+              <a href="https://www.linkedin.com/in/karthik-ammanamanchi" title="https://www.linkedin.com/in/karthik-ammanamanchi" class="link-mod" target="_blank"><div class="contact_linkedin"></div></a>
+              <a href="mailto:saikarthik1211@gmail.com" title="saikarthik1211@gmail.com" class="link-mod"><div class="contact_mail"></div></a>
+            </div>
+          </center>
+        </div>
+        <div class="contact_holder_small" style="width: 160px;">
+          <center><div class="pic_small" style="background-image: url(img/ashiq.jpg)"></div></center>
+          <center><div class="name_small">Ashiq Muhammed</div></center>
+          <center>
+            <div class="contact_link">
+              <a href="https://www.linkedin.com/in/ashiqmuhammed" title="https://www.linkedin.com/in/ashiqmuhammed" class="link-mod" target="_blank"><div class="contact_linkedin"></div></a>
+              <a href="mailto:mbgashiq@gmail.com" title="mbgashiq@gmail.com" class="link-mod"><div class="contact_mail"></div></a>
+            </div>
+          </center>
+        </div>
+     </div>
+    </div>
+				<div class="row" id="bottomitem" style="padding-top:1%;">
 
 					<div class="col offset-l1 l4 s12 center" style="margin-top:24px;" >
 			 
@@ -92,7 +136,7 @@
 
 				</div>
 
-					<div class="row s10 offset-s1 col"  style="padding-top:5%;">
+					<div class="row s10 offset-s1 col" id="bottomitem" style="padding-top:5%;">
 					<div class="col s12" style="	height: 1px;	background-color: white;	opacity: 0.6;">
 						<hr style="margin-bottom:22px;	height: 1px;	background-color: white;	opacity: 0.6;">
 					</div>
