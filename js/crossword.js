@@ -251,10 +251,10 @@
 								}else
 	`							{
 									puzz.data[x-1].both=false;
-								}
+								};
 							}
 							
-							if($(light).empty() && puzz.data[x-1].both==false){
+							if($(light).empty()&&puzz.data[x-1].both==false){
 								$(light)
 									.addClass('entry-' + (hasOffset ? x - positionOffset : x) + ' position-' + (x-1) )
 									.append('<input maxlength="1" val="" type="text" tabindex="-1" />');
