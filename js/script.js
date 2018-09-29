@@ -24,7 +24,7 @@
 					clue: "When you don't need some lines of code but don't wish to remove them..",
 					answer: "cccccc",
 					position: 6,
-					orientation: "down",
+					orientation: "across",
 					startx: 14,
 					starty: 7
 				},
@@ -123,6 +123,16 @@
 					startx: 13,
 					starty: 9 	
 				},
+
+{
+					clue: "All nodes say 'Hi' to each other ",
+					answer: "ccccccc",
+					position: 9,
+					orientation: "down",
+					startx: 14,
+					starty: 7
+
+			},
 
 {
 					clue: "\"Can't get out of this block because I'm a ...\"",

@@ -33,8 +33,8 @@
 			width: 100%;
 		}
 		table td {
-			width: 2em;
-			height: 2em;
+			width: 4em;
+			height: 4em;
 			border: 1px solid #cdcdcd;
 			padding: 0;
 			margin: 0;
@@ -59,7 +59,7 @@
 		
 		td span {
 			color: #444;
-			font-size: 0.8em;
+			font-size: 2em;
 			position: absolute;
 			top: -1px;
 			left: 1px;
@@ -80,14 +80,16 @@
 		}
 		
 		#puzzle-wrapper {
-			float: left;
-			width: 54%;
+			 
+			width: 100%;
 			margin-right: 3%;
 		}
 		#puzzle-clues {
 			float: left;
-			width: 40%;
-		}
+			width: 80%;
+			margin-left:10%;
+			margin-right:10%;		
+}
 		
 		#puzzle-clues li{
 			font-size: 1.2em;
