@@ -37,7 +37,7 @@ $curname=substr($cureditrow["name"],0,3);
 	<html>
 
 
-	<head>
+	<head profile="http://www.w3.org/2005/10/profile">
 		<title>Threads</title>
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">

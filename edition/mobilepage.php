@@ -16,16 +16,17 @@ $cureditrow=$curedit->fetch_assoc();
 
 	<html>
 
-	<head>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<title>Threads</title>
+	<head profile="http://www.w3.org/2005/10/profile" >
+<title>Threads</title>
 
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<meta name="theme-color" content="#305b87">
     		<link rel="icon"       type="image/png" href="/webimages/favicon.png" /> 
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
+		
 
 		<link href="/styles/post.css" rel="stylesheet">
 
