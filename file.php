@@ -1,5 +1,6 @@
 <?php
 include "common/con.php";
+include "common/common.php";
 if(!function_exists('mime_content_type')) {
 
     function mime_content_type($filename) {
@@ -80,12 +81,17 @@ if(!function_exists('mime_content_type')) {
 
 
 $id=$_GET['id'];
-$sql="select * from uploads where id=$id";
-$r=$conn->query($sql);
-$row=$r->fetch_assoc();
+$sql="select * from uploads where id=?";
+$stmt=$conn->prepare($sql);
+$stmt->bind_param("i",$id);
+$stmt->execute();
+$stmt->store_result();
+
+$row=fassoc($stmt);
 
 $filename=$row["path"];
 header("Location: ".$filename);
+$stmt->close();
 die();
   $nd=mime_content_type($filename);
 
