@@ -23,7 +23,7 @@ $cureditrow=$curedit->fetch_assoc();
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<meta name="theme-color" content="#305b87">
-<link rel="icon" href="/webimages/favicon.png?v=1.1"> 
+    		<link rel="icon"       type="image/png" href="/webimages/favicon.png" /> 
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
