@@ -564,5 +564,5 @@ alert("Oops .Wrong Answer ! \n Don't Give UP!  ");
 
 }
 });
-
+}
 
