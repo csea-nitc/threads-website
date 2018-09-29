@@ -22,7 +22,7 @@
 				},
 				{
 					clue: "When you don't need some lines of code but don't wish to remove them..",
-					answer: "cccccc",
+					answer: "ccccccc",
 					position: 6,
 					orientation: "across",
 					startx: 14,
@@ -83,7 +83,7 @@
 
 {
 					clue: "In short, plus plus.",
-					answer: "cccccccccc",
+					answer: "ccccccccc",
 					position: 2,
 					orientation: "down",
 					startx: 16,
@@ -137,7 +137,7 @@
 {
 					clue: "\"Can't get out of this block because I'm a ...\"",
 					answer: "cccc",
-					position: 8,
+					position: 11,
 					orientation: "down",
 					startx: 4,
 					starty: 14
