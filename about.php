@@ -49,9 +49,7 @@ $("#bottomitem").show();
     <div class="row">
       <div class="col offset-l3 l6" style="font-size:22px; font-family:webfontregular;">
           
-				Threads, the official newsletter of the Computer Science and Engineering Department of NIT Calicut, is an initiative by the Computer Science and Engineering Association with amble support from the staff and students of the department. We aim to encourage technical reflections, innovations and conversations by facilitating the exchange of ideas in a fellowship of students, staff and alumni. We hope to create a narrative that inspires novice engineers and foster their creative endeavors and to build a space where our expert practitioners can advice and offer the former a glimpse into their professional career. We extend an invitation to all who wish to be a part of the dialogue that we hope to continue with Threads.
-
-        
+			Threads, the official newsletter of the Computer Science and Engineering Department of NIT Calicut, is an initiative by the Computer Science and Engineering Association with ample support from the staff and students of the department. We aim to encourage technical reflections, innovations and conversations by facilitating the exchange of ideas in a fellowship of students, staff and alumni. We hope to create a narrative that inspires novice engineers and foster their creative endeavors and to build a space where our expert practitioners can advice and offer the former a glimpse into their professional career. We extend an invitation to all who wish to be a part of the dialogue that we hope to continue with Threads.
       
       </div>
     </div>
@@ -73,9 +71,12 @@ $("#bottomitem").show();
 		
 
 			<div class="row" style="width:100%;	background: url('/webimages/about.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
-
-<div  id="sitecredits" class="fadeout hide footer_overlay">
-      <center><span style="font-weight:bolder;font-size:24px">Developers</span></center>
+<div id="sitecredits" class="fadeout  footer_overlay" style="width: 100%;">
+      <div class="row"><div class="col s6"><center><span style="font-weight:bolder;font-size:24px">Developers</span></center></div>
+  
+  <div class="col s4 offset-s1"><center><span style="font-weight:bolder;font-size:24px">Designer</span></center></div>
+  
+</div>
       <div class="flexbox" style="padding: 30px 0px 0px 0px;">
         <div class="contact_holder_small" style="width: 160px;">
           <center><div class="pic_small" style="background-image: url(img/abhi.jpeg)"></div></center>
@@ -107,6 +108,28 @@ $("#bottomitem").show();
             </div>
           </center>
         </div>
+     </div><div class="flexbox" style="padding: 30px 0px 0px 0px;">
+        <div class="contact_holder_small" style="width: 160px;">
+          <center><div class="pic_small" style="background-image: url(img/abhi.jpeg)"></div></center>
+          <center><div class="name_small">Abhiram Haridas</div></center>
+          <center>
+            <div class="contact_link">
+              <a href="https://www.linkedin.com/in/abhiram-haridas" title="https://www.linkedin.com/in/abhiram-haridas" class="link-mod" target="_blank"><div class="contact_linkedin"></div></a>
+              <a href="mailto:abhiram.haridas@gmail.com" title="abhiram.haridas@gmail.com" class="link-mod"><div class="contact_mail"></div></a>
+            </div>
+          </center>
+        </div>
+        <div class="contact_holder_small" style="width: 160px;">
+          <center><div class="pic_small" style="background-image: url(img/karthik.png)"></div></center>
+          <center><div class="name_small">Ammanamanchi Sai Karthik</div></center>
+          <center>
+            <div class="contact_link">
+              <a href="https://www.linkedin.com/in/karthik-ammanamanchi" title="https://www.linkedin.com/in/karthik-ammanamanchi" class="link-mod" target="_blank"><div class="contact_linkedin"></div></a>
+              <a href="mailto:saikarthik1211@gmail.com" title="saikarthik1211@gmail.com" class="link-mod"><div class="contact_mail"></div></a>
+            </div>
+          </center>
+        </div>
+        
      </div>
     </div>
 				<div class="row" id="bottomitem" style="padding-top:1%;">
