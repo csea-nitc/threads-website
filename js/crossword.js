@@ -234,15 +234,15 @@
 									
 								};
 								
-							}
+							};
 							
 							if($(light).empty() ){
 								if(hasOffset==false)
 								{
-								$(light).addClass('entry-' +puzz.data[x-1].position);}
+								$(light).addClass('entry-' +puzz.data[x-1].position).append('<input maxlength="1" val="" type="text" tabindex="-1" />');}
 
-								$(light).addClass(' position-' + x-1 ).append('<input maxlength="1" val="" type="text" tabindex="-1" />');
-							}
+								$(light).addClass(' position-' + x-1 );
+							};
 						};
 						
 					};	
