@@ -15,8 +15,8 @@
 			 	{
 					clue: "Not a one ___ motor, but a three ___ motor",
 					answer: "cc",
-					position: 3,
-					orientation: "across",
+					position: 1,
+					orientation: "down",
 					startx: 1,
 					starty: 1
 				},
