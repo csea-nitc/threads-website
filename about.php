@@ -167,8 +167,8 @@ $("#bottomitem").show();
 
 					<div class="row s10 offset-s1 col" id="bottomitem" style="padding-top:5%;">
 					
-<div class="col offset-s5 s2" onclick="showcredits();">Site Credits</div>
-<div class="col offset-s5 s12" style="	height: 1px;	background-color: white;	opacity: 0.6;">
+<!-- <div class="col offset-s5 s2" onclick="showcredits();">Site Credits</div> -->
+<div class="col s12" style="	height: 1px;	background-color: white;	opacity: 0.6;">
 						<hr style="margin-bottom:22px;	height: 1px;	background-color: white;	opacity: 0.6;">
 					</div>
 					<div class="col l12 m12 s12 center" style="margin-top:24px;">
