@@ -33,8 +33,8 @@
 			width: 100%;
 		}
 		table td {
-			width: 4em;
-			height: 4em;
+			width: 2em;
+			height: 2em;
 			border: 1px solid #cdcdcd;
 			padding: 0;
 			margin: 0;
@@ -48,7 +48,7 @@
 			padding: 0em;
 			border: none;
 			text-align: center;
-			font-size: 2.5em;
+			font-size: 1.5em;
 			color: #666;
 			background-color: #f4f4f4;
 		}
