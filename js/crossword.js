@@ -8,7 +8,7 @@
 			
 			// append clues markup after puzzle wrapper div
 			// This should be moved into a configuration object
-			this.after('<div id="puzzle-clues"><h2>Across</h2><ul id="across"></ul><h2>Down</h2><ul id="down"></ul><input type="submit" onclick="return submit();"> Check Answers </input></div>');
+			this.after('<div id="puzzle-clues"><h2>Across</h2><ul id="across"></ul><h2>Down</h2><ul id="down"></ul><input type="submit" onclick="return submit();" value="Check Answers "> </input></div>');
 			
 			// initialize some variables
 			var tbl = ['<table id="puzzle">'],
