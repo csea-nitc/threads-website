@@ -92,7 +92,7 @@
 
 {
 					clue: "Procedure is key to do work. 12 tribes on your keyboard.",
-					answer: "ccccccccc",
+					answer: "cccccccc",
 					position: 3,
 					orientation: "down",
 					startx: 8,
