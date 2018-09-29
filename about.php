@@ -71,7 +71,7 @@ $("#bottomitem").show();
 		
 
 			<div class="row" style="width:100%;	background: url('/webimages/about.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
-<div id="sitecredits" class="fadeout  footer_overlay" style="width: 100%;">
+<!--<div id="sitecredits" class="fadeout  footer_overlay" style="width: 100%;">
       <div class="row"><div class="col s6"><center><span style="font-weight:bolder;font-size:24px">Developers</span></center></div>
   
   <div class="col s4 offset-s1"><center><span style="font-weight:bolder;font-size:24px">Designer</span></center></div>
@@ -131,7 +131,7 @@ $("#bottomitem").show();
         </div>
         
      </div>
-    </div>
+    </div>  -->
 				<div class="row" id="bottomitem" style="padding-top:1%;">
 
 					<div class="col offset-l1 l4 s12 center" style="margin-top:24px;" >
