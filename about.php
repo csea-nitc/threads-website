@@ -8,7 +8,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 		<link href="/styles/post.css" rel="stylesheet">
 		<link href="/styles/style.css" rel="stylesheet">
-		
+				<link href="/styles/credits.css" rel="stylesheet">
 		<link rel="icon" href="/webimages/favicon.png?v=1.1"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 	
    <!-- Compiled and minified CSS -->
@@ -137,7 +137,9 @@ function showcredits() {
 				</div>
 
 					<div class="row s10 offset-s1 col" id="bottomitem" style="padding-top:5%;">
-					<div class="col s12" style="	height: 1px;	background-color: white;	opacity: 0.6;">
+					
+<div class="col offset-s5 s2" onclick="showcredits();">Site Credits</div>
+<div class="col offset-s5 s12" style="	height: 1px;	background-color: white;	opacity: 0.6;">
 						<hr style="margin-bottom:22px;	height: 1px;	background-color: white;	opacity: 0.6;">
 					</div>
 					<div class="col l12 m12 s12 center" style="margin-top:24px;">
