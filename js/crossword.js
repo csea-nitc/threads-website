@@ -236,13 +236,13 @@
 								
 							};
 							
-							if($(light).empty() ){
+							
 								if(hasOffset===false)
 								{
 								$(light).addClass('entry-' +puzz.data[x-1].position).append('<input maxlength="1" val="" type="text" tabindex="-1" />');};
 
-								$(light).addClass(' position-' + x-1 );
-							};
+								$(light).addClass(' position-' + (x-1) );
+							
 						};
 						
 					};	
@@ -252,7 +252,7 @@
 						$groupedLights = $('.entry-' + i);
 						if(!$('.entry-' + i +':eq(0) span').length){
 							$groupedLights.eq(0)
-								.append('<span>' + puzz.data[i].position + '</span>');
+								.append('<span>' + i + '</span>');
 						}
 					}	
 					
