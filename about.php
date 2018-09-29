@@ -22,7 +22,7 @@
 <script>
 function showcredits() {
 $("#bottomitem").hide();
-  $("#sitecredits").removeClass("fadeout").addClass("fadein");
+  $("#sitecredits").removeClass("fadeout").removeClass("hide").addClass("fadein");
   return false;
 }
 
@@ -74,7 +74,7 @@ $("#bottomitem").show();
 
 			<div class="row" style="width:100%;	background: url('/webimages/about.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
 
-<div  id="sitecredits" class="fadeout footer_overlay">
+<div  id="sitecredits" class="fadeout hide footer_overlay">
       <center><span style="font-weight:bolder;font-size:24px">Developers</span></center>
       <div class="flexbox" style="padding: 30px 0px 0px 0px;">
         <div class="contact_holder_small" style="width: 160px;">

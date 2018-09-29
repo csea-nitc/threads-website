@@ -50,6 +50,10 @@
 	transition: opacity 0.4s ease-in-out;
 }
 
+.hide{
+
+display:none;
+}
 .fadein, .fadeout {
     opacity:0;
 		z-index:99;
