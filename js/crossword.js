@@ -8,7 +8,7 @@
 			
 			// append clues markup after puzzle wrapper div
 			// This should be moved into a configuration object
-			this.after('<div id="puzzle-clues"><h2>Across</h2><ul id="across"></ul><h2>Down</h2><ul id="down"></ul></div>');
+			this.after('<div id="puzzle-clues"><h2>Across</h2><ul id="across"></ul><h2>Down</h2><ul id="down"></ul><input type="submit" onclick="return submit();"> Check Answers </input></div>');
 			
 			// initialize some variables
 			var tbl = ['<table id="puzzle">'],
@@ -539,3 +539,30 @@
 	}
 	
 })(jQuery);
+
+
+function submit()
+
+{
+
+var tot=$("input[type='text']").length;
+var txt="";
+for(i=0;i<tot;i++)
+{
+txt=txt+$("input[type='text']").eq(i).val();
+
+}
+ $.post( "/crosswordchecker.php",{
+          ans:txt
+}
+             ,function( data ) {
+       if(data==="correct"){
+alert("Yayy ! You Nailed it .\n\n Take screenshot of solved puzzle and mail it to csea@nitc.ac.in");
+}
+else{
+alert("Oops .Wrong Answer ! \n Don't Give UP!  ");
+
+}
+});
+
+
