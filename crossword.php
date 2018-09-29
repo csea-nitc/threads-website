@@ -92,9 +92,9 @@
 }
 		
 		#puzzle-clues li{
-			font-size: 1.2em;
-			margin: .3em;
-			line-height: 1.6em;
+			font-size: 2em;
+			margin: 1.4em;
+			line-height: 2em;
 		}
 		
 	</style>

@@ -106,7 +106,7 @@
 					startx: 10,
 					starty: 5
 				},
-
+/*
 {
 					clue: '"Terminal is too complicated, just give me everything in one GUI." ',
 					answer: "ccc",
@@ -114,7 +114,7 @@
 					orientation: "down",
 					startx: 6,
 					starty: 7
-				},
+				},*/
 {
 					clue: "4 bytes is one...",
 					answer: "cccc",
@@ -136,7 +136,7 @@
 
 {
 					clue: "\"Can't get out of this block because I'm a ...\"",
-					answer: "cccc",
+					answer: "ccccc",
 					position: 11,
 					orientation: "down",
 					startx: 4,
