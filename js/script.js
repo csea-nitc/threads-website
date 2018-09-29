@@ -129,8 +129,8 @@
 					answer: "ccccccc",
 					position: 9,
 					orientation: "down",
-					startx: 14,
-					starty: 7
+					startx: 16,
+					starty: 9
 
 			},
 

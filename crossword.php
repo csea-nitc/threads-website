@@ -59,9 +59,9 @@
 		
 		td span {
 			color: #444;
-			font-size: 2em;
+			font-size: 1.3em;
 			position: absolute;
-			top: -1px;
+			top: 3.8px;
 			left: 1px;
 		}
 		
