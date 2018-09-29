@@ -228,12 +228,12 @@
 							// If so, it means there's an across & down entry for the position.
 							// Therefore you need to subtract the offset when applying the entry class.
 							if(x > 1 ){
-								puzz.data[x-both=false;			
+								puzz.data[x-1].both=false;			
 								if (puzz.data[x-1].position === puzz.data[x-2].position) {
 									hasOffset = true;
 									puzz.data[x-1].both=true;
 								};
-	`							
+								
 							}
 							
 							if($(light).empty() && puzz.data[x-1].both===false){
