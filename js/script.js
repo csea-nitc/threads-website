@@ -128,7 +128,7 @@
 					clue: "All nodes say 'Hi' to each other ",
 					answer: "ccccccc",
 					position: 9,
-					orientation: "down",
+					orientation: "across",
 					startx: 16,
 					starty: 9
 
