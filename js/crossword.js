@@ -223,7 +223,7 @@
 
 						for (var i=0; i < entries[x-1].length; ++i) {
 							light = $(puzzCells +'[data-coords="' + entries[x-1][i] + '"]');
-							
+							hasOffset=false;
 							// check if POSITION property of the entry on current go-round is same as previous. 
 							// If so, it means there's an across & down entry for the position.
 							// Therefore you need to subtract the offset when applying the entry class.
@@ -237,7 +237,7 @@
 							};
 							
 							if($(light).empty() ){
-								if(hasOffset==false)
+								if(hasOffset===false)
 								{
 								$(light).addClass('entry-' +puzz.data[x-1].position).append('<input maxlength="1" val="" type="text" tabindex="-1" />');}
 
