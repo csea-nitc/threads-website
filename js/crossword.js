@@ -1,24 +1,7 @@
 
-/**
-* Jesse Weisbeck's Crossword Puzzle (for all 3 people left who want to play them)
-*
-*/
 (function($){
 	$.fn.crossword = function(entryData) {
-			/*
-				Qurossword Puzzle: a javascript + jQuery crossword puzzle
-				"light" refers to a white box - or an input
-
-				DEV NOTES: 
-				- activePosition and activeClueIndex are the primary vars that set the ui whenever there's an interaction
-				- 'Entry' is a puzzler term used to describe the group of letter inputs representing a word solution
-				- This puzzle isn't designed to securely hide answerers. A user can see answerers in the js source
-					- An xhr provision can be added later to hit an endpoint on keyup to check the answerer
-				- The ordering of the array of problems doesn't matter. The position & orientation properties is enough information
-				- Puzzle authors must provide a starting x,y coordinates for each entry
-				- Entry orientation must be provided in lieu of provided ending x,y coordinates (script could be adjust to use ending x,y coords)
-				- Answers are best provided in lower-case, and can NOT have spaces - will add support for that later
-			*/
+		 
 			
 			var puzz = {}; // put data array in object literal to namespace it into safety
 			puzz.data = entryData;
@@ -254,9 +237,7 @@
 							}
 							
 							if($(light).empty()&&puzz.data[x-1].both==false){
-								$(light)
-									.addClass('entry-' +x + ' position-' + (x-1) )
-									.append('<input maxlength="1" val="" type="text" tabindex="-1" />');
+								$(light).addClass('entry-' +x + ' position-' + (x-1) ).append('<input maxlength="1" val="" type="text" tabindex="-1" />');
 							}
 						};
 						
