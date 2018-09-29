@@ -1,0 +1,66 @@
+#sitecredits {
+	margin-top: 60px;
+	color: white;
+}
+
+
+.flexbox {
+	width: 100%;
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 100px 0px;
+}
+
+
+.contact_holder_small {
+	position: relative;
+	width: 80px;
+	height: 150px;
+	margin: 10px;
+	line-height: 16px;
+}
+
+.contact_holder_small .pic_small {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: #ccc;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.contact_holder_small .name_small {
+	padding: 10px 0px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.fadein {
+	z-index: 101;
+	opacity: 1;
+	-moz-transition: opacity 0.4s ease-in-out;
+	-o-transition: opacity 0.4s ease-in-out;
+	-webkit-transition: opacity 0.4s ease-in-out;
+	transition: opacity 0.4s ease-in-out;
+}
+
+.fadein, .fadeout {
+    opacity:0;
+		z-index:99;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+}
+.contact_link {
+	position: relative;
+	width: 120px;
+	height: 20px;
+	margin: 5px auto;
+}
