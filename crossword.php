@@ -85,15 +85,15 @@
 		}
 		
 		#puzzle-wrapper {
-			 float:left;
+			 /*float:left;
 			width: 50%;
-			margin-left: 0%;
+			margin-left: 0%;*/
 		}
 		#puzzle-clues {
-			float: left;
+			/*float: left;
 			width: 40%;
 			margin-left:5%
-					
+			*/		
 }
 		
 		#puzzle-clues li{
