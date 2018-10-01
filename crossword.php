@@ -21,8 +21,8 @@
 	*/
 	body {
 		font: 62.5%/1.3em Helvetica, sans-serif;
-		width: 90.3%;
-		margin: 10px auto;
+		width: 100%;
+	
 	}
 		table { 
 			border-collapse: collapse; 
@@ -33,8 +33,8 @@
 			width: 100%;
 		}
 		table td {
-			width: 2em;
-			height: 2em;
+			width: 25px;
+			height:25px;
 			border: 1px solid #cdcdcd;
 			padding: 0;
 			margin: 0;
@@ -48,7 +48,7 @@
 			padding: 0em;
 			border: none;
 			text-align: center;
-			font-size: 1.5em;
+			font-size: 2em;
 			color: #666;
 			background-color: #f4f4f4;
 		}
@@ -59,7 +59,7 @@
 		
 		td span {
 			color: #444;
-			font-size: 1.3em;
+			font-size: 1em;
 			position: absolute;
 			top: 3.8px;
 			left: 1px;
@@ -80,20 +80,20 @@
 		}
 		
 		#puzzle-wrapper {
-			 
-			width: 100%;
-			margin-right: 3%;
+			 float:left;
+			width: 50%;
+			margin-left: 0%;
 		}
 		#puzzle-clues {
 			float: left;
-			width: 80%;
-			margin-left:10%;
-			margin-right:10%;		
+			width: 40%;
+			margin-left:5%
+					
 }
 		
 		#puzzle-clues li{
 			font-size: 2em;
-			margin: 1.4em;
+			margin: 0.3em;
 			line-height: 2em;
 		}
 		

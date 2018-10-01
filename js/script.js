@@ -20,7 +20,23 @@
 					startx: 10,
 					starty: 5
 				},
-				{
+				
+
+
+{
+clue: '"Terminal is too complicated,just give me everything in one GUI"',
+answer:'ccc',
+position:5,
+orientation:"down",
+startx:6,
+starty:7
+
+
+
+}
+,
+
+{
 					clue: "When you don't need some lines of code but don't wish to remove them..",
 					answer: "ccccccc",
 					position: 6,

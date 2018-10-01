@@ -1,8 +1,9 @@
 <?php
 $ans=$_POST["ans"];
 
+$ans=strtolower($ans);
 //add answer here 
-if($ans=="biinputnnacfhardwarueyenxcommentcaenestedwnetworkieotocharnidmlbreakoilncoutzadeclarec")
+if($ans=="biinputnnacfhardwareueyeinxcommentdcaenestedwnetworkieotocharnidmlbreakolncoutzadeclarec")
        
 
 {echo "correct";}
