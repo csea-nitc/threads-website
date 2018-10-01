@@ -10,6 +10,11 @@
 	<title>Crossword </title>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 	<script src="/js/jquery.js"></script>
 <script src="/js/crossword.js"></script>
 
@@ -103,7 +108,10 @@
 
 <body>
 	
+<div class="row">
+<div class="col s12 l6 m12">
 <div id="puzzle-wrapper"></div>
+</div>
 
 
 	</body></html>
