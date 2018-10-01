@@ -38,6 +38,7 @@ $curname=substr($cureditrow["name"],0,3);
 
 
 	<head profile="http://www.w3.org/2005/10/profile">
+
 		<title>Threads</title>
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
@@ -53,6 +54,16 @@ $curname=substr($cureditrow["name"],0,3);
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126668797-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126668797-1');
+</script>
+
 	</head>
 
 	<body>
