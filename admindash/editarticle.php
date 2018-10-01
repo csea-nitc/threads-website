@@ -98,7 +98,7 @@ var code = editor.getValue();
         },function( data ) {
          // console.log(data);
         // alert(data);
-    window.location.href = '/admin/editedition.php?id=<?php echo $_GET['eid']; ?>';
+    window.location.href = 'editedition.php?id=<?php echo $_GET['eid']; ?>';
   });
       }
       
