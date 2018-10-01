@@ -33,6 +33,7 @@
 			border-collapse: collapse; 
 			border-spacing: 0; 
 			max-width: 100%;
+			margin-top:30%;
 		}
 		table tr{
 			width: 100%;
