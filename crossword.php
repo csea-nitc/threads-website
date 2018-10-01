@@ -41,7 +41,7 @@
 		table td {
 			width: 25px;
 			height:25px;
-			border: 1px solid #cdcdcd;
+			/*border: 1px solid #cdcdcd;*/
 			padding: 0;
 			margin: 0;
 			background-color: #333;
@@ -64,8 +64,8 @@
 	/* margin-left: 30%; */
 	margin-top: 50px;
 	height: 100px;
-	width: 40%;
-	font-size: 3em;
+	width: 50%;
+	font-size: 2em;
 }
 		td input:focus {
 			background-color: #fff;
