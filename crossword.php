@@ -109,9 +109,8 @@
 <body>
 	
 <div class="row">
-<div class="col s12 l6 m12">
+
 <div id="puzzle-wrapper"></div>
-</div>
 
 
 	</body></html>
