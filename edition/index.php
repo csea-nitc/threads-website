@@ -373,6 +373,8 @@ $curname=substr($cureditrow["name"],0,3);
 						$('#authorphoto').hide();
 						
 					}
+
+					_gaq.push(['_trackPageview', '/article/'+article.title]);
 					//	$('#authorbio').append(div);
 				});
 				$('#article-box').show();
