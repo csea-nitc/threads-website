@@ -41,7 +41,7 @@
 		table td {
 			width: 25px;
 			height:25px;
-			/*border: 1px solid #cdcdcd;*/
+			border: 1px solid #cdcdcd;
 			padding: 0;
 			margin: 0;
 			background-color: #333;
