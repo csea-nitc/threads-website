@@ -349,7 +349,7 @@ $cureditrow=$curedit->fetch_assoc();
 					}
 					$('#dotgroup').show();
 					window.scrollTo(0, 0);
-					ga('set', 'page', '/article/'+article.title]);
+					ga('set', 'page', '/article/'+article.title);
 					ga('send', 'pageview');
 					
 					//	$('#authorbio').append(div);

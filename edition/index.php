@@ -374,7 +374,7 @@ $curname=substr($cureditrow["name"],0,3);
 						
 					}
 
-				ga('set', 'page', '/article/'+article.title]);
+				ga('set', 'page', '/article/'+article.title);
 					ga('send', 'pageview');
 					//	$('#authorbio').append(div);
 				});
