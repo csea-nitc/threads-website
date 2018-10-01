@@ -45,6 +45,7 @@
 			margin: 0;
 			background-color: #333;
 			position: relative;
+			border-radius:0px;
 		}
 				
 		td input {
