@@ -349,7 +349,9 @@ $cureditrow=$curedit->fetch_assoc();
 					}
 					$('#dotgroup').show();
 					window.scrollTo(0, 0);
-					_gaq.push(['_trackPageview', '/article/'+article.title]);
+					ga('set', 'page', '/article/'+article.title]);
+					ga('send', 'pageview');
+					
 					//	$('#authorbio').append(div);
 				});
 				$('#article-box').show();

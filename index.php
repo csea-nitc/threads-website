@@ -40,6 +40,13 @@ $edit=$conn->query($sql);
   gtag('js', new Date());
 
   gtag('config', 'UA-126668797-1');
+
+function trackpdf(f)
+{
+
+ga('set', 'page', 'downloadlinkevent/'+f);
+ga('send', 'pageview');
+}
 </script>
 
 	</head>
@@ -112,7 +119,7 @@ $edit=$conn->query($sql);
 						  <?php
 								
 									if ($row["pdflink"]!="nil"  ){ ?>		<div class="linkgroups">
-						<a    href="<?php echo $row["pdflink"]; ?>">  Download PDF 
+						<a  onclick="trackpdf(<?php $row["id"]; ?>);"  href="<?php echo $row["pdflink"]; ?>">  Download PDF 
 						
 					 </a>  </div>
 			<?php
