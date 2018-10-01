@@ -58,7 +58,14 @@
 			color: #666;
 			background-color: #f4f4f4;
 		}
-		
+		.sbt{
+
+	/* margin-left: 30%; */
+	margin-top: 50px;
+	height: 100px;
+	width: 30%;
+	font-size: 4em;
+}
 		td input:focus {
 			background-color: #fff;
 		}
