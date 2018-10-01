@@ -195,9 +195,9 @@
 				*/
 				buildTable: function() {
 					for (var i=1; i <= rows; ++i) {
-						tbl.push("<tr>");
+						tbl.push('<tr class="browser-default" >');
 							for (var x=1; x <= cols; ++x) {
-								tbl.push('<td data-coords="' + x + ',' + i + '"></td>');		
+								tbl.push('<td class="browser-default" data-coords="' + x + ',' + i + '"></td>');		
 							};
 						tbl.push("</tr>");
 					};
@@ -253,7 +253,7 @@
 						$groupedLights = $('.entry-' + i);
 						if(!$('.entry-' + i +':eq(0) span').length){
 							$groupedLights.eq(0)
-								.append('<span>' + i + '</span>');
+								.append('<span class="browser-default">' + i + '</span>');
 						}
 					}	
 					
