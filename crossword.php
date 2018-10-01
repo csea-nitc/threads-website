@@ -63,8 +63,8 @@
 	/* margin-left: 30%; */
 	margin-top: 50px;
 	height: 100px;
-	width: 30%;
-	font-size: 4em;
+	width: 40%;
+	font-size: 3em;
 }
 		td input:focus {
 			background-color: #fff;
