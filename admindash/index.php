@@ -14,11 +14,13 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   $password=$_POST['password'];
   
 // getting query from db
-$sql = "SELECT * from admins where name='".$username."' and password='".$password."'";
+$sql = "SELECT * from admins where name=? and password=?";
   
-$result = $conn->query($sql);
- 
-if ($result->num_rows > 0) {
+$stmt=$conn->prepare($sql);
+$stmt->bind_param("ss",$username,$password);
+$stmt->execute();
+$stmt->store_result();
+if(fassoc($stmt)){
   //redirect to manage.php adminpage
   session_start();
   header('Location:manage.php');
