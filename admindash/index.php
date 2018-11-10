@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   
   
    include '../common/con.php';
-  
+  include '../common/common.php';
   
   
   $username=$_POST['username'];
@@ -17,7 +17,9 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 $sql = "SELECT * from admins where name=? and password=?";
   
 $stmt=$conn->prepare($sql);
+
 $stmt->bind_param("ss",$username,$password);
+
 $stmt->execute();
 $stmt->store_result();
 if(fassoc($stmt)){
