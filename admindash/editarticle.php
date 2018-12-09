@@ -4,10 +4,11 @@ $titleval="";
 $contentval="";
 $abio="";
 $aval="";
+$minutes="";
 
 $photourl="";
 include 'header.php';
- 
+
 if(isset($_GET['id']))
 {  include '../common/con.php';
 
@@ -24,6 +25,7 @@ if(isset($_GET['id']))
             $abio=$row['authorshortbio'];
             $photourl=$row['authorphoto'];
             $artdate=$row['date'];
+           $minutes=$row['minutes'];
 }
 
 ?>
@@ -40,18 +42,18 @@ if(isset($_GET['id']))
     authorbio=$('#authorbio').val();
     photourl=$('#photourl').val();
         date=$('#artdate').val();
-        minute=0;
+        minutes=$('#minutes').val();
 var editor = ace.edit("editor");
 
- code = editor.getValue();  
-       
+ code = editor.getValue();
+
         $.post( "/edition/testarticle1.php",{
           title:tbox,
           authorname:authorname,
           authorbio:authorbio,
           authorphoto:photourl,
           content:code,
-          minutes:0,
+          minutes:minutes,
          artdate:date,
           mode:"edit",
           eid:-2,
@@ -60,13 +62,13 @@ var editor = ace.edit("editor");
              ,function( data ) {
          console.log(data);
         // alert(data);
-        $("#iframe1").contents().find('body').html(data); 
+        $("#iframe1").contents().find('body').html(data);
         });
-      
-      
-      
+
+
+
       }
-      
+
       function savearticle()
       {
         //send sata to a
@@ -75,10 +77,11 @@ var editor = ace.edit("editor");
     authorbio=$('#authorbio').val();
     photourl=$('#photourl').val();
               date=$('#artdate').val();
+              minutes = $('#minutes').val();
         var editor = ace.edit("editor");
 
 var code = editor.getValue();
-        
+
         $.post( "savearticle.php",{
           title:tbox,
           authorname:authorname,
@@ -86,14 +89,15 @@ var code = editor.getValue();
           authorphoto:photourl,
           content:code,
            artdate:date,
+           minutes:minutes,
           mode:"<?php echo $_GET['mode']; ?>",
           eid:<?php echo $_GET['eid']; ?>
-          <?php 
+          <?php
           if($_GET['mode']=='edit'){
       echo ",aid:".$_GET['id'];
 }
         ?>
-  
+
 
         },function( data ) {
          // console.log(data);
@@ -101,26 +105,26 @@ var code = editor.getValue();
     window.location.href = 'editedition.php?id=<?php echo $_GET['eid']; ?>';
   });
       }
-      
-      
-      
-     
-    
-    
+
+
+
+
+
+
     </script>
-    
+
     <h1>
        Add Article
     </h1>
     Title:<input type="text" id="titlebox" placeholder="Title" value="<?php echo $titleval;?>"></input><br>
-  
+
    Author:<input type="text" id="authorname" placeholder="Author" value="<?php echo $aval;?>"></input><br>
   Author Bio:<input type="text" id="authorbio" placeholder="AuthorBio" value="<?php echo $abio;?>"></input><br>
 Photo-Url:<input type="text" id="photourl" placeholder="paste author phhoto url " value="<?php echo $photourl;?>"></input><br>
-Date of article:<input type="date" value="<?php echo $artdate;?>" id="artdate" name="artdate"/>
-
+Date of article:<input type="date" value="<?php echo $artdate;?>" id="artdate" name="artdate"/><br>
+Minutes:<input type="text" value="<?php echo $minutes;?>" placeholder="Minutes to read" id="minutes"/><br>
 <style type="text/css" media="screen">
-    #editor { 
+    #editor {
       width:800px;
       height:500px;
     }
@@ -133,22 +137,22 @@ Date of article:<input type="date" value="<?php echo $artdate;?>" id="artdate" n
   //editor.setValue(' ")   ;
 </script>
      <br>
-      
+
       <input type="button" onclick="refreshrender();" value="preview"/>
      <input type="button" onclick="savearticle();" value="Save"/>
        <!-- frame -->
-      
+
     </hr>
      <iframe id="iframe1" draggable="true" width="900" height="1500" style=""">
-    
-    </iframe>  
-       
+
+    </iframe>
+
 </div>
-  
- 
+
+
 
 <?php include 'footer.php';?>
-    
+
   </body>
 </html>
 

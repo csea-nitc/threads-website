@@ -1,6 +1,6 @@
  <?php
 $va=$_POST;
-  
+
 ?>
 
 	<html>
@@ -14,7 +14,7 @@ $va=$_POST;
 		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 		<link href="/styles/post.css" rel="stylesheet">
-		<link rel="icon" href="/webimages/favicon.png?v=1.1"> 
+		<link rel="icon" href="/webimages/favicon.png?v=1.1">
 		<link href="/styles/v-style.css" rel="stylesheet">
 		<!-- Compiled and minified CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
@@ -80,7 +80,7 @@ $va=$_POST;
 									<div class="editiontitle" id="editiontitle">Editions </div>
 									<div id="navbarentry-wrap">
 
-											
+
 
 
 
@@ -116,15 +116,15 @@ $va=$_POST;
 											<div class="authorbio" id="authorbio"> <?php echo $va["authorbio"]; ?></div>
 										</div>
 										<div class="dateread">
-											
+
 											<span class="artdate" id="artdate">
-												dummy 
+												dummy
 											</span>
 											<span class="readmin" id="readmin">
-										dummy	</span>
+										<?php echo $va['minutes']; ?> min read	</span>
 
 																										 </div>
-																											 
+
 										</div>
 									</div>
 
@@ -212,4 +212,3 @@ $va=$_POST;
 
 </body>
 </html>
-			
