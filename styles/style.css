@@ -53,6 +53,12 @@ a{
 	float:left;
 	
 }*/
+.linkcontainer{
+display:flex;
+ flex-direction: column;
+  justify-content:center;
+  height:30%;
+}
 .linkgroups a{
 	float:left;
 	box-shadow: 14px 15px 25px -11px rgba(0, 0, 0, 0.4);
@@ -65,6 +71,7 @@ a{
 	font-family: webfontregular;
 	font-size: 14.2pt;
 	padding: 0px 0px 0px 36px;
+	
 }
 .hide{
 	

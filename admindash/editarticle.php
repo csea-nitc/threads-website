@@ -47,7 +47,7 @@ var editor = ace.edit("editor");
 
  code = editor.getValue();
 
-        $.post( "/edition/testarticle1.php",{
+        $.post( "/edition/testarticle.php",{
           title:tbox,
           authorname:authorname,
           authorbio:authorbio,
