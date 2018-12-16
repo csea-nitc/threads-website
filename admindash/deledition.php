@@ -1,6 +1,11 @@
 <?php
 
+header('Location:manage.php');
 die();
+// remove above lines to delete edition 
+
+
+
 if(isset($_GET['id']))
 {
  
