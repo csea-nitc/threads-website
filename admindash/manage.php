@@ -23,8 +23,10 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
       ?>
     
-    <tr><td><?php echo $row['name'] ?></td><td><a onclick="return confirm_click();" href="editedition.php?id=<?php echo  $row['id'] ?>" >EDIT</a></td>
-     <td><a href="deledition.php?id=<?php echo $row['id'] ;?>" >DELETE</a></td><td><input type="checkbox" <?php if($row["visible"]==1) {echo "checked";} ?> name="visible" onclick="svm(<?php echo  $row['id'] ?>)" value="1" /></td>
+
+    <tr><td><?php echo $row['name'] ?></td><td><a href="editedition.php?id=<?php echo  $row['id'] ?>" >EDIT</a></td>
+     <td><a onclick="return confirm_click();" href='deledition.php?id=<?php echo $row['id'] ;?>'>DELETE</a></td><td><input type="checkbox" <?php if($row["visible"]==1) {echo "checked";} ?> name="visible" onclick="svm(<?php echo  $row['id'] ?>)" value="1" /></td>
+
          </tr>
     
     
@@ -38,6 +40,10 @@ if ($result->num_rows > 0) {
       </table>
     
    <script> 
+         function confirm_click()
+{
+return confirm("Are you sure you want to delete?");
+}      
     function svm(id){
       
         $.post("setvisibilitymode.php",{id:id}, function(data, status){
