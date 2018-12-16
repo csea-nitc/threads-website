@@ -43,7 +43,7 @@ $curname=substr($cureditrow["name"],0,3);
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+		  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="/styles/post.css" rel="stylesheet">
 		<link href="/styles/v-style.css" rel="stylesheet">
 	<link rel="icon"       type="image/png" href="/webimages/favicon.png" /> 
@@ -69,12 +69,46 @@ $curname=substr($cureditrow["name"],0,3);
 	<body>
 		<!-- <div class="header">-->
 		<div class="row threads-ribbon" style="background : url('/webimages/topbar.png'); background-size:cover; ">
-			<div class="col l12 m12 s12">
+			<div class="col s7">
 
 				<!--<img class="threads-ribbon" style="background-size:cover" src="/styles/topbar.png"/>-->
 
 				<a href="/"><img class="responsive-img threads-logo" src="/styles/threads-logo.png"></a>
 			</div>
+			<div class="col row offset-s1 s3" id="dropcontain">
+			  <div id="dropdown2" class="row  dropdown-content" style="overflow:hidden;max-width:25%;" >
+			  <span>
+      <label>
+        <span class="col s3" style="padding-top:10px;font-size:1.5em;	" ><b>Email:</b></span>
+        <input class="col s9" type="email" id="alertemail" placeholder="Enter your email"></input>
+      
+      </label>
+    </span>
+ 
+  <p class="offset-s1 col s11">
+      <label>
+        <input id="alertarticle"   type="checkbox"  />
+        <span>Alert on new Article</span>
+      </label>
+    </p>
+      <p class=" offset-s1 col s11">
+      <label>
+        <input id ="alertedition" type="checkbox"  />
+        <span>Alert on new edition</span>
+      </label>
+    </p>
+    <br>
+     <p class="col s4		 ">
+      <label>
+      
+ <a class="btn blue lighten-2 "  onclick="subscribe();" >Subscribe!</a>
+   </label>
+    </p>
+  </div>
+  <a class="btn dropdown-trigger blue lighten-2" href="#!" style="margin-top:20px;" data-target="dropdown2">Subscribe!<i class="material-icons right">add</i></a>
+            
+			</div>
+		</div>
 		</div>
 
 
@@ -138,8 +172,7 @@ $curname=substr($cureditrow["name"],0,3);
 
 
 
-										<div class="navbaritem" id="editionentry" onclick="initpage(<?php echo $curid; ?>,-1,true,this.getAttribute('edname'),this.getAttribute('eyear'));" edname="<?php echo  substr($cname,0,3);; ?>" eyear="<?php echo  $cyear; ?>" edid="<?php echo  $w[" id
-										 "]; ?>">
+										<div class="navbaritem" id="editionentry" onclick="initpage(<?php echo $curid; ?>,-1,true,this.getAttribute('edname'),this.getAttribute('eyear'));" edname="<?php echo  substr($cname,0,3);; ?>" eyear="<?php echo  $cyear; ?>" edid="<?php echo  $w["id"]; ?>">
 											<?php  echo $w["name"];	?>
 										</div>
 
@@ -441,8 +474,34 @@ $curname=substr($cureditrow["name"],0,3);
 					selectarticle(articleid);
 				}
 			}
+			
+			function subscribe()
+			{
+			
+			var email=$('#alertemail').val();
+			if(email=='')
+			{alert('Please fill email field');return;}
+			var alertart=$("#alertarticle").is(':checked');
+			var alerted=$("#alertedition").is(':checked');
+			if(!alertart && !alerted){alert("Please select an alert checkbox");return;}
+			
+			
+			// send to server
+			
+			$.get("/subscribetoemail.php?id=" + email+"&alertarticle="+alertart+"&alertedition="+alerted, function(data) {
+
+
+			});
+
+			
+			
+			
+			}
 
 			$(document).ready(function() {
+			
+			 var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, {closeOnClick:false,constrainWidth:false});
 
 				/*	$(window).scroll(function(){
     $("#floatsidebar").css("margin-top",Math.max(-450,0-$(this).scrollTop()));

@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
       ?>
     
     <tr><td><?php echo $row['title'] ?></td><td><?php echo $row['authorname'] ?></td><td><a href="editarticle.php?mode=edit&eid=<?php echo $_GET['id']; ?>&id=<?php echo  $row['id'] ?>" >EDIT</a></td>
-      <td><a href="delarticle.php?id=<?php echo $row['id'] ;?>" >DELETE</a></td><td><input type="checkbox" <?php if($row["visible"]==1) {echo "checked";} ?> name="visible" onclick="svm(<?php echo  $row['id'];?>)" value="1" /></td>
+      <td><a onclick="return confirm_click();"  >DELETE</a></td><td><input type="checkbox" <?php if($row["visible"]==1) {echo "checked";} ?> name="visible" onclick="svm(<?php echo  $row['id'];?>)" value="1" /></td>
          </tr>
     
     
@@ -76,6 +76,10 @@ if ($result->num_rows > 0) {
           
     });
     }       
+     function confirm_click()
+{
+return confirm("Are you sure you want to delete?");
+}      
     </script>
    
     
