@@ -80,7 +80,7 @@ $curname=substr($cureditrow["name"],0,3);
 			  <span>
       <label>
         <span class="col s3" style="padding-top:10px;font-size:1.5em;	" ><b>Email:</b></span>
-        <input class="col s9" type="email" id="alertemail" placeholder="Enter your email"></input>
+        <input class="col s9" type="email" id="alertemail" required="true" placeholder="Enter your email"></input>
       
       </label>
     </span>
@@ -98,7 +98,7 @@ $curname=substr($cureditrow["name"],0,3);
       </label>
     </p>
     <br>
-     <p class="col s4		 ">
+     <p class="col s4">
       <label>
       
  <a class="btn blue lighten-2 "  onclick="subscribe();" >Subscribe!</a>
@@ -481,14 +481,17 @@ $curname=substr($cureditrow["name"],0,3);
 			var email=$('#alertemail').val();
 			if(email=='')
 			{alert('Please fill email field');return;}
+			if (isvalidemail(email)==false)
+			{alert('Please enter valid email id');return;}
 			var alertart=$("#alertarticle").is(':checked');
 			var alerted=$("#alertedition").is(':checked');
 			if(!alertart && !alerted){alert("Please select an alert checkbox");return;}
-			
-			
+			a1=0;a2=0;
+			if(alertart){a1=1;}
+			if(alerted){a2=1;}
 			// send to server
 			
-			$.get("/subscribetoemail.php?id=" + email+"&alertarticle="+alertart+"&alertedition="+alerted, function(data) {
+			$.get("/subscribetoemail.php?id=" + email+"&alertarticle="+a1+"&alertedition="+a2, function(data) {
 
 
 			});
@@ -517,6 +520,13 @@ $curname=substr($cureditrow["name"],0,3);
 				//load firstg current edition
 				initpage(<?php echo $cureditrow['id']; ?>, -11, true, "<?php echo $curname; ?>", "<?php echo $curyear; ?>");
 			});
+			
+			
+function isvalidemail(email) {
+return true;
+//var emailReg =  /(.+)@(.+){2,}\.(.+){2,}/;
+  //return regex.test(email);
+}
 		</script>
 	</body>
 
