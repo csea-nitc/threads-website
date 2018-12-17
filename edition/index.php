@@ -75,11 +75,11 @@ $curname=substr($cureditrow["name"],0,3);
 
 				<a href="/"><img class="responsive-img threads-logo" src="/styles/threads-logo.png"></a>
 			</div>
-			<div class="col row offset-s1 s3" id="dropcontain">
-			  <div id="dropdown2" class="row  dropdown-content" style="overflow:hidden;max-width:25%;" >
+			<div class="col row offset-s2 s3" id="dropcontain">
+			  <div id="dropdown2" class="row  dropdown-content" style="overflow:hidden;max-width:23%; " >
 			  <span>
       <label>
-        <span class="col s3" style="padding-top:10px;font-size:1.5em;	" ><b>Email:</b></span>
+        <span class="col s3" style="padding-top:10px;font-size:1.1em;" ><b>Email:</b></span>
         <input class="col s9" type="email" id="alertemail" required="true" placeholder="Enter your email"></input>
       
       </label>
@@ -98,7 +98,7 @@ $curname=substr($cureditrow["name"],0,3);
       </label>
     </p>
     <br>
-     <p class="col s4">
+     <p class="col s6 offset-s2" style="margin-top:18px;margin-bottom:18px;">
       <label>
       
  <a class="btn blue lighten-2 "  onclick="subscribe();" >Subscribe!</a>
@@ -346,26 +346,11 @@ $curname=substr($cureditrow["name"],0,3);
 
 			function loadarticle(id) {
 				$('#articleentry.navbaritem-selected').removeClass().addClass("navbaritem");
+console.log(id);
 				$('[eid=' + id + ']').removeClass();
 				$('[eid=' + id + ']').addClass("navbaritem-selected")
-				/*
-  
-				<div class="article" id="article">
-				  
-				  <!--- to render article -->
-				  
-				  <div id="articletitle">
-				    
-				  </div>
-				  
-				  <div id="content">
-				    
-				  </div>
-				   
-				</div>
-  
-  
-				*/
+				 
+               
 
 				$.get("/getarticle.php?id=" + id, function(data) {
 
@@ -417,15 +402,16 @@ $curname=substr($cureditrow["name"],0,3);
 
 			}
 
-			function loadarticlelist(id, loadfirstarticle) {
+			function loadarticlelist(id,aid) {
 				//
+
 				$('#editionentry.navbaritem-selected').removeClass().addClass("navbaritem");
 				$('[edid=' + id + ']').removeClass();
 				$('[edid=' + id + ']').addClass("navbaritem-selected");
 
 				$('#navbarentry-wrap').html('');
 				$.get("../getarticlelist.php?id=" + id, function(data) {
-
+        
 					var articles = JSON.parse(data);
 
 					var i;
@@ -436,44 +422,43 @@ $curname=substr($cureditrow["name"],0,3);
 							eid: articles[i].id,
 							onclick: "loadarticle(" + articles[i].id + ");"
 						});
-						if (loadfirstarticle == false && i == 0) {
-							title.addClass("navbaritem-selected");
-
-						} else {
+						
 							title.addClass("navbaritem");
-						}
+						
 
 						title.html(articles[i].title);
 						$('#navbarentry-wrap').append(title);
 
 					}
-					if (loadfirstarticle) {
-						loadarticle(articles[0].id);
-					}
-				});
+
+	        
+				if(aid==-1){loadarticle(articles[0].id);}
+                else{	 	loadarticle(aid);}
+			}
+		
+				);
 
 
 
 
 			}
 
-			function selectarticle(idd) {
-
-				loadarticle(idd)
-
-			}
+		 
 
 
 			function initpage(editionid, articleid, loadfirstarticle, edname, edyear) {
-
+ 
 				$('#ednametxt').html(edname);
 				$('#edyeartxt').html(edyear);
+                if (loadfirstarticle == true) {
+						articleid=-1;
+					}
 
-				loadarticlelist(editionid, loadfirstarticle);
-				if (loadfirstarticle == false) {
-					selectarticle(articleid);
-				}
-			}
+				loadarticlelist(editionid, articleid);
+	
+
+
+}
 			
 			function subscribe()
 			{
@@ -517,9 +502,27 @@ $curname=substr($cureditrow["name"],0,3);
 						  $("#floatsidebar").show();
 					}
 });*/
+
+
+// If article id is , loads it else load first article
+// https://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
+var url = new URL(window.location.href);
+var artid = url.searchParams.get("aid");
+
+ 
+ 
+
+if(artid==null){
 				//load firstg current edition
 				initpage(<?php echo $cureditrow['id']; ?>, -11, true, "<?php echo $curname; ?>", "<?php echo $curyear; ?>");
-			});
+}
+else{
+                    //load aid art
+
+				initpage(<?php echo $cureditrow['id']; ?>,artid, false, "<?php echo $curname; ?>", "<?php echo $curyear; ?>");
+
+}
+});
 			
 			
 function isvalidemail(email) {
