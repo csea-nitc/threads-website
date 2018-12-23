@@ -71,7 +71,7 @@ $target_file = $target_dir.$subfolder. basename($_FILES["fileToUpload"]["name"])
    
     <?php
       include '../common/con.php';
-    $sql = "SELECT * from uploads";
+    $sql = "SELECT * from uploads where edid=".$_GET['id'];;
   
 $result = $conn->query($sql);
  

@@ -1,7 +1,6 @@
 <?php
 
-header('Location:manage.php');
-die();
+
 // remove above lines to delete edition 
 
 
@@ -13,7 +12,11 @@ include '../common/con.php';
   $id=$_GET['id'];
  // getting query from db
 $sql = "DELETE FROM `edition` WHERE id='$id'";
-  
+ 
+ 
+ // TODO delete folder also 
+ 
+ 
 $result = $conn->query($sql);
   $sql = "DELETE FROM `Articles` WHERE editionid='$id'";
   
