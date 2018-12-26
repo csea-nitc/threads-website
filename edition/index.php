@@ -51,18 +51,7 @@ $curname=substr($cureditrow["name"],0,3);
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
 		<!-- Compiled and minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126668797-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-126668797-1');
-</script>
+		
 
 	</head>
 
@@ -87,14 +76,14 @@ $curname=substr($cureditrow["name"],0,3);
  
   <p class="offset-s1 col s11">
       <label>
-        <input id="alertarticle"   type="checkbox"  />
-        <span>Alert on new Article</span>
+        <input id="alertarticle"   name="alert" type="radio"  />
+        <span>Alert me on every update</span>
       </label>
     </p>
       <p class=" offset-s1 col s11">
       <label>
-        <input id ="alertedition" type="checkbox"  />
-        <span>Alert on new edition</span>
+        <input id ="alertedition" name="alert" type="radio"  />
+        <span>Alert me only on new edition</span>
       </label>
     </p>
     <br>
@@ -316,181 +305,39 @@ $curname=substr($cureditrow["name"],0,3);
 		</div>
 
 
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				var elems = document.querySelectorAll('.dropdown-trigger');
-				options = {};
-				var instances = M.Dropdown.init(elems, options);
-			});
-			/* 
-     var dropdown = document.getElementsByClassName("dropdown-btn");
-			var i;
-			
-			for (i = 0; i < dropdown.length; i++) {
-			  dropdown[i].addEventListener("click", function() {
-			    this.classList.toggle("active");
-			    var dropdownContent = this.nextElementSibling;
-			    var current = document.getElementsByClassName("selected");
-			    if(current.length>0){
-			    current[0].className = current[0].className.replace(" sidenav-selected", "");}
-			    this.className += " sidenav-selected"; //<!--Dude, I copied and refined the code from www.w3schools.com/howto/tryit.asp?filename=tryhow_js_active_element  but it is not working, can you check?-->
-			    if (dropdownContent.style.display === "block") {
-			      dropdownContent.style.display = "none";
-			   
-			    } else {
-			      dropdownContent.style.display = "block";
-			    
-			    }
-			  });
-			}*/
-
-			function loadarticle(id) {
-				$('#articleentry.navbaritem-selected').removeClass().addClass("navbaritem");
-console.log(id);
-				$('[eid=' + id + ']').removeClass();
-				$('[eid=' + id + ']').addClass("navbaritem-selected")
-				 
-               
-
-				$.get("/getarticle.php?id=" + id, function(data) {
-
-					var article = JSON.parse(data);
-
-					var i;
-
-					$('#title-box').empty();
-
-					$('#content-box').empty();
-					$('#title-box').html(article.title);
-
-					$('#viewcount').html(article.viewcount + " Views");
-					$('#content-box').html(article.content);
-					$('#authorbio').html(article.authorshortbio);
-					if(article.authorname!==""){
-						$('#readmin').show();
-						$('#artdate').show();
-					$('#readmin').html(article.minutes +" min read");
-					$('#artdate').html(article.datetxt);
-					}
-					else{
-						
-				$('#readmin').hide();
-						$('#artdate').hide();
-						
-					}
-					$('#authorname').html(article.authorname);
-					if (article.authorname != "") {
-						jQuery("#authorphoto").attr("src", "");
-						
-						jQuery("#authorphoto").attr("src", article.authorphoto);
-						
-						$('#authorphoto').show();
-
-					}
-					else{
-						$('#authorphoto').hide();
-						
-					}
-
-				ga('set', 'page', '/article/'+article.title);
-					ga('send', 'pageview');
-					//	$('#authorbio').append(div);
-				});
-				$('#article-box').show();
-				$('#articles').hide();
-
-
-			}
-
-			function loadarticlelist(id,aid) {
-				//
-
-				$('#editionentry.navbaritem-selected').removeClass().addClass("navbaritem");
-				$('[edid=' + id + ']').removeClass();
-				$('[edid=' + id + ']').addClass("navbaritem-selected");
-
-				$('#navbarentry-wrap').html('');
-				$.get("../getarticlelist.php?id=" + id, function(data) {
-        
-					var articles = JSON.parse(data);
-
-					var i;
-					var ind;
-					for (i = 0; i < articles.length; i++) {
-						var title = $(document.createElement('div')).attr({
-							id: "articleentry",
-							eid: articles[i].id,
-							onclick: "loadarticle(" + articles[i].id + ");"
-						});
-						
-							title.addClass("navbaritem");
-						
-
-						title.html(articles[i].title);
-						$('#navbarentry-wrap').append(title);
-
-					}
-
-	        
-				if(aid==-1){loadarticle(articles[0].id);}
-                else{	 	loadarticle(aid);}
-			}
+		<script>//loading script at end
+		</script>
+				
+<script src="/js/post.js"></script>
 		
-				);
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126668797-1"></script>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)
+    [0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126668797-1', 'auto') ; 
+ga('send', 'pageview');
+</script>
+
+<script>
+$(document).ready(function() {
 
 
-
-
-			}
-
-		 
-
-
-			function initpage(editionid, articleid, loadfirstarticle, edname, edyear) {
- 
-				$('#ednametxt').html(edname);
-				$('#edyeartxt').html(edyear);
-                if (loadfirstarticle == true) {
-						articleid=-1;
-					}
-
-				loadarticlelist(editionid, articleid);
-	
-
-
-}
-			
-			function subscribe()
-			{
-			
-			var email=$('#alertemail').val();
-			if(email=='')
-			{alert('Please fill email field');return;}
-			if (isvalidemail(email)==false)
-			{alert('Please enter valid email id');return;}
-			var alertart=$("#alertarticle").is(':checked');
-			var alerted=$("#alertedition").is(':checked');
-			if(!alertart && !alerted){alert("Please select an alert checkbox");return;}
-			a1=0;a2=0;
-			if(alertart){a1=1;}
-			if(alerted){a2=1;}
-			// send to server
-			
-			$.get("/subscribetoemail.php?id=" + email+"&alertarticle="+a1+"&alertedition="+a2, function(data) {
-
-
-			});
-
-			
-			
-			
-			}
-
-			$(document).ready(function() {
 			
 			 var elems = document.querySelectorAll('.dropdown-trigger');
+			
     var instances = M.Dropdown.init(elems, {closeOnClick:false,constrainWidth:false});
-
+ window["subscribedrop"]=instances[0];
+				options={inDuration:100}
+				 var elems = document.querySelectorAll('.modal');
+				    var instances = M.Modal.init(elems, options);
 				/*	$(window).scroll(function(){
     $("#floatsidebar").css("margin-top",Math.max(-450,0-$(this).scrollTop()));
 						 console.log($(document).height()-150+" :"+$(this).scrollTop());
@@ -523,14 +370,11 @@ else{
 
 }
 });
-			
-			
-function isvalidemail(email) {
-return true;
-//var emailReg =  /(.+)@(.+){2,}\.(.+){2,}/;
-  //return regex.test(email);
-}
-		</script>
+
+</script>
+		
+		
+		
 	</body>
 
 	</html>

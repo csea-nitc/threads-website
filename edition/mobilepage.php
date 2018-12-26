@@ -39,11 +39,22 @@ $cureditrow=$curedit->fetch_assoc();
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126668797-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
+ /* window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-126668797-1');
+  
+  */
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)
+    [0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126668797-1', 'auto') ; 
+
+    ga('send', 'pageview');
 </script>
 
 
@@ -208,7 +219,37 @@ $cureditrow=$curedit->fetch_assoc();
 
 
 
-
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      
+			  <span>
+      <label>
+        <span class="col s3" style="padding-top:10px;font-size:1.1em;" ><b>Email:</b></span>
+        <input class="col s9" type="email" id="alertemail" required="true" placeholder="Enter your email"></input>
+      
+      </label>
+    </span>
+ 
+  <p class="offset-s1 col s11">
+      <label>
+        <input id="alertarticle"   name="alert" type="radio"  />
+        <span>Alert me on every update</span>
+      </label>
+    </p>
+      <p class=" offset-s1 col s11">
+      <label>
+        <input id ="alertedition" name="alert" type="radio"  />
+        <span>Alert me only on new edition</span>
+      </label>
+    </p>
+    <br>
+  </div>
+   
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect blue lighten-2 waves-green btn-flat" onclick="subscribe();" >Subscribe!</a>
+    </div>
+  </div>
 
 
 
@@ -216,8 +257,13 @@ $cureditrow=$curedit->fetch_assoc();
 
 
 		<div class="row" id="bottombar" style="	background: url('/webimages/BG.png');	height: 281px;	margin-bottom: 0px;	padding-top: 13px;	background-size: cover;	position: absolute;	margin-bottom: 0px;">
+			
+			<div class="row">
+			<div data-target="modal1"  class="col s4 modal-trigger offset-s4 " >	<img src="/webimages/Subscribe.png" class="responsive-img center" />
+		</btn>
+			</div>
 			<div class="row" style="margin-bottom:0px;">
-
+				
 				<div class="col   s11 offset-s1 center" style="margin-top:24px;">
 					<a href="/about.php"><img class="responsive-img col s3" src="/webimages/About.png" style="padding-top:7.1px;padding-right:23px;" ></a>
 					<a href="http://assoc.cse.nitc.ac.in/">		<img class="responsive-img col s3 offset-s1" src="/webimages/CSEA.png" style="padding:8px;padding-right:22px"></a>
@@ -258,13 +304,18 @@ $cureditrow=$curedit->fetch_assoc();
 			</div>
 		</div>
 		</div>
-
+<script src="/js/post-mobile.js"></script>
 
 		<script>
-			document.addEventListener('DOMContentLoaded', function() {
+		
+		document.addEventListener('DOMContentLoaded', function() {
+		 
 				var elems = document.querySelectorAll('.dropdown-trigger');
 				options = {};
 				var instances = M.Dropdown.init(elems, options);
+				options={inDuration:100}
+				 var elems = document.querySelectorAll('.modal');
+				    var instances = M.Modal.init(elems, options);
 			});
 			/* 
      var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -277,7 +328,7 @@ $cureditrow=$curedit->fetch_assoc();
 			    var current = document.getElementsByClassName("selected");
 			    if(current.length>0){
 			    current[0].className = current[0].className.replace(" sidenav-selected", "");}
-			    this.className += " sidenav-selected"; //<!--Dude, I copied and refined the code from www.w3schools.com/howto/tryit.asp?filename=tryhow_js_active_element  but it is not working, can you check?-->
+			    this.classNameins how to implement event tracking with analytics.js. += " sidenav-selected"; //<!--Dude, I copied and refined the code from www.w3schools.com/howto/tryit.asp?filename=tryhow_js_active_element  but it is not working, can you check?-->
 			    if (dropdownContent.style.display === "block") {
 			      dropdownContent.style.display = "none";
 			   
@@ -287,143 +338,7 @@ $cureditrow=$curedit->fetch_assoc();
 			    }
 			  });
 			}*/
-
-			function loadarticle(id) {
-				$('.sidenav').sidenav('close');
-				$('#articleentry.navbaritem-selected').removeClass().addClass("navbaritem");
-
-				/*
-  
-				<div class="article" id="article">
-				  
-				  <!--- to render article -->
-				  
-				  <div id="articletitle">
-				    
-				  </div>
-				  
-				  <div id="content">
-				    
-				  </div>
-				   
-				</div>
-  
-  
-				*/
-
-				$.get("/getarticle.php?id=" + id, function(data) {
-
-					var article = JSON.parse(data);
-
-					var i;
-				
-					$('#title-box').empty();
-
-					$('#content-box').empty();
-					$('#title-box').html(article.title);
-
-					
-					
-					$('#content-box').html(article.content);
-						$('#loadscreen').remove();
-						$('#bottombar').show();
-					$('#authorbio').html(article.authorshortbio);
-					if (article.authorname !== "") {
-						$('#readmin').show();
-						$('#artdate').show();
-						$('#authordetails').show();
-						$('#readmin').html(article.minutes + " min read");
-						$('#artdate').html(article.datetxt);
-					} else {
-						$('#authordetails').hide();
-						$('#readmin').hide();
-						$('#readmin').hide();
-
-					}
-					$('#authorname').html(article.authorname);
-					if (article.authorname !== "") {
-						jQuery("#authorphoto").attr("src", "");
-						jQuery("#authorphoto").attr("src", article.authorphoto);
-					} else {
-						$('#authorphoto').attr("src", "");
-					}
-					$('#dotgroup').show();
-					window.scrollTo(0, 0);
-					ga('set', 'page', '/article/'+article.title);
-					ga('send', 'pageview');
-					
-					//	$('#authorbio').append(div);
-				});
-				$('#article-box').show();
-				$('#articles').hide();
-
-
-			}
-
-			function loadarticlelist(id, loadfirstarticle) {
-				//
-				//$('#editionentry.navbaritem-selected').removeClass().addClass("navbaritem");
-				//$('[edid=' + id + ']').removeClass();
-				$('[edid=' + id + ']').addClass("navbaritem-selected");
-
-				$('[type=article]').remove();
-				$.get("../getarticlelist.php?id=" + id, function(data) {
-
-					var articles = JSON.parse(data);
-
-					var i;
-					var ind;
-					for (i = 0; i < articles.length; i++) {
-						var title = $(document.createElement('a')).attr({
-							id: "articleentry",
-							href: "#!",
-							class: "truncate",
-							eid: articles[i].id,
-							onclick: "loadarticle(" + articles[i].id + ");"
-						});
-						if (loadfirstarticle == false && i == 0) {
-							title.addClass("navbaritem-selected");
-
-						} else {
-							title.addClass("navbaritem");
-						}
-
-						title.html(articles[i].title);
-						var li = $(document.createElement('li')).attr({
-							type: "article"
-						});
-						li.append(title);
-						li.insertBefore('#artli');
-
-					}
-					if (loadfirstarticle) {
-						loadarticle(articles[0].id);
-					}
-				});
-
-
-
-
-			}
-
-			function selectarticle(idd) {
-
-				loadarticle(idd)
-
-			}
-
-
-			function initpage(editionid, articleid, loadfirstarticle, edname, edyear) {
-
-				$('#edname').html(edname + " " + edyear);
-				//$('#edyeartxt').html(edyear);
-
-				loadarticlelist(editionid, loadfirstarticle);
-				if (loadfirstarticle == false) {
-					selectarticle(articleid);
-				}
-			}
-
+	
 			$(document).ready(function() {
 						$('#dotgroup').hide();
 					$('#bottombar').hide();
@@ -443,7 +358,7 @@ $cureditrow=$curedit->fetch_assoc();
 					outDuration: 150,
 					inDuration: 150
 				});
-
+window["edfullname"]="<?php echo $curname; ?>"+" "+"<?php echo $curyear; ?>";
 				initpage(<?php echo $cureditrow['id']; ?>, -11, true, "<?php echo $curname; ?>", "<?php echo $curyear; ?>");
 			});
 		</script>
