@@ -49,6 +49,40 @@ ga('send', 'pageview');
 									<div class="z-depth-2" style="background : url('/webimages/topbar.png');background-repeat:round;">
 										<div class="container ">
 											<img style="padding :30px 14px;" src="/webimages/threads-logo.png" class="responsive-img">
+											
+														<div class="col row offset-s2 s3" id="dropcontain">
+			  <div id="dropdown2" class="row  dropdown-content" style="overflow:hidden;max-width:23%; " >
+			  <span>
+      <label>
+        <span class="col s3" style="padding-top:10px;font-size:1.1em;" ><b>Email:</b></span>
+        <input class="col s9" type="email" id="alertemail" required="true" placeholder="Enter your email"></input>
+      
+      </label>
+    </span>
+ 
+  <p class="offset-s1 col s11">
+      <label>
+        <input id="alertarticle"   name="alert" type="radio"  />
+        <span>Alert me on every update</span>
+      </label>
+    </p>
+      <p class=" offset-s1 col s11">
+      <label>
+        <input id ="alertedition" name="alert" type="radio"  />
+        <span>Alert me only on new edition</span>
+      </label>
+    </p>
+    <br>
+     <p class="col s6 offset-s2" style="margin-top:18px;margin-bottom:18px;">
+      <label>
+      
+ <a class="btn blue lighten-2 "  onclick="subscribe();" >Subscribe!</a>
+   </label>
+    </p>
+  </div>
+  <a class="btn dropdown-trigger blue lighten-2" href="#!" style="margin-top:20px;" data-target="dropdown2">Subscribe!<i class="material-icons right">add</i></a>
+  </div>
+											
 											</div>
 										</div>
 										<!--img id="threadslogo" src="/webimages/threads-logo.png"-->
