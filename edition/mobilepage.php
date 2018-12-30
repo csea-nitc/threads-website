@@ -260,7 +260,7 @@ $cureditrow=$curedit->fetch_assoc();
 			
 			<div class="row">
 			<div data-target="modal1"  class="col s4 modal-trigger offset-s4 " >	<img src="/webimages/Subscribe.png" class="responsive-img center" />
-		</btn>
+		</div>
 			</div>
 			<div class="row" style="margin-bottom:0px;">
 				

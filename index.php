@@ -11,7 +11,22 @@ $rr=$countstmt->fetch_assoc();
 if($rr['count']>1)
 {$hasprevlink=1;}
 $edit=$conn->query($sql);
+$row=$edit->fetch_assoc();
+
 ///SELECT convert(datetime, CONCAT('10 ',CONCAT(CONCAT(name,' '),year), 106)
+
+
+function isMobile() {
+    
+	
+	return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+}
+
+// to displaythreads
+$mobile=0;
+if(isMobile()){$mobile=1;}
+
+
 ?>
 <html>
 	<head profile="http://www.w3.org/2005/10/profile" >
@@ -28,29 +43,99 @@ $edit=$conn->query($sql);
 									<!-- Compiled and minified JavaScript -->
 									<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 									<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-									<!-- Global site tag (gtag.js) - Google Analytics -->
-									<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126668797-1"></script>
+									<!-- Global site tag (gtag.js) - Google Analytics 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+ 
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)
+    [0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126668797-1', 'auto') ; 
+ga('send', 'pageview');
+</script>
+
 									<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-126668797-1');
-
-function trackpdf(f)
+function trackpdf()
 {
 
-ga('set', 'page', 'downloadlinkevent/'+f);
+ga('set', 'page', 'downloadlinkevent/'+"<?php echo $row['name'].$row['year'];;  ?>");
 ga('send', 'pageview');
+return true;
 }
+
+	document.addEventListener('DOMContentLoaded', function() {
+		 
+				var elems = document.querySelectorAll('.dropdown-trigger');
+				options = {};
+				var instances = M.Dropdown.init(elems, options);
+				options={inDuration:100}
+				 var elems = document.querySelectorAll('.modal');
+				    var instances = M.Modal.init(elems, options);
+			});
+$(document).ready(function() {
+
+
+			
+			 var elems = document.querySelectorAll('.dropdown-trigger');
+			
+    var instances = M.Dropdown.init(elems, {closeOnClick:false,constrainWidth:false});
+ window["subscribedrop"]=instances[0];
+ });
+ 
+ 
+ function isvalidemail(email) {
+
+
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+  {
+    return (true)
+  }
+ 
+    return (false)
+}
+	
+function subscribe()
+			{
+			
+			var email=$('#alertemail').val();
+			if(email=='')
+			{alert('Please fill email field');return;}
+			if (isvalidemail(email)==false)
+			{alert('Please enter valid email id');return;}
+			var alertart=$("#alertarticle").is(':checked');
+			var alerted=$("#alertedition").is(':checked');
+			if(!alertart && !alerted){alert("Please select an alert checkbox");return;}
+			a1=0;a2=0;
+			if(alertart){a1=0;}
+			if(alerted){a1=1;}
+			// send to server
+			
+			$.get("/subscribetoemail.php?id=" + email+"&alerttype="+a1, function(data) {
+
+
+			});
+			window.subscribedrop.close();
+			 M.toast({html: 'Thanks for subscribing'})
+			
+			
+			}
 </script>
 								</head>
 								<body >
 									<div class="z-depth-2" style="background : url('/webimages/topbar.png');background-repeat:round;">
-										<div class="container ">
+										<div class="container row ">
+										<div class="col s8">
 											<img style="padding :30px 14px;" src="/webimages/threads-logo.png" class="responsive-img">
+											</div>
 											
-														<div class="col row offset-s2 s3" id="dropcontain">
+											
+											<div class="col s4">
+											<?php if($mobile==0){ ?>
+														<div class="col row offset-s3" id="dropcontain">
 			  <div id="dropdown2" class="row  dropdown-content" style="overflow:hidden;max-width:23%; " >
 			  <span>
       <label>
@@ -81,9 +166,10 @@ ga('send', 'pageview');
     </p>
   </div>
   <a class="btn dropdown-trigger blue lighten-2" href="#!" style="margin-top:20px;" data-target="dropdown2">Subscribe!<i class="material-icons right">add</i></a>
+ <?php } ?>
   </div>
 											
-											</div>
+	  </div>										</div>
 										</div>
 										<!--img id="threadslogo" src="/webimages/threads-logo.png"-->
 										<!---
@@ -96,8 +182,7 @@ ga('send', 'pageview');
 		-->
 										<?php
 
-		$row=$edit->fetch_assoc();
-
+		
 
 		?>
 										<div style="overflow-y:scroll; max-height:55%;">
@@ -125,8 +210,7 @@ ga('send', 'pageview');
 
 									if ($row["pdflink"]!="nil"  ){ ?>
 															<div class="linkgroups">
-																<a  onclick="trackpdf(
-																	<?php $row["id"]; ?>);"  href="
+																<a  onclick="return trackpdf();"  target="_blank" href="
 																	<?php echo $row["pdflink"]; ?>">  Download PDF
 
 					 
@@ -149,8 +233,47 @@ ga('send', 'pageview');
 											</div>
 										</div>
 									</div>
+									
+									  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      
+			  <span>
+      <label>
+        <span class="col s3" style="padding-top:10px;font-size:1.1em;" ><b>Email:</b></span>
+        <input class="col s9" type="email" id="alertemail" required="true" placeholder="Enter your email"></input>
+      
+      </label>
+    </span>
+ 
+  <p class="offset-s1 col s11">
+      <label>
+        <input id="alertarticle"   name="alert" type="radio"  />
+        <span>Alert me on every update</span>
+      </label>
+    </p>
+      <p class=" offset-s1 col s11">
+      <label>
+        <input id ="alertedition" name="alert" type="radio"  />
+        <span>Alert me only on new edition</span>
+      </label>
+    </p>
+    <br>
+  </div>
+   
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect blue lighten-2 waves-green btn-flat" onclick="subscribe();" >Subscribe!</a>
+    </div>
+  </div>
+
 									<div class="newfooter" >
-										<div class="row" style="padding-top:22px;">
+									<?php if($mobile==1){ ?>
+									<div class="row" style="margin-top:12px;margin-left:10%">
+									<div data-target="modal1"  class="col s4 modal-trigger offset-s4 " >	<img src="/webimages/Subscribe.png" class="responsive-img center" /></div>
+		</div>
+		<?php } ?>
+									
+										<div class="row" style="<?php if($mobile==0){ ?> padding-top:22px; <?php } ?>">
 											<div class="col s2 m1 l1 offset-l2 offset-m2 offset-s1" style='margin-left:14.1%;	padding-top: -1px;	padding: 1% 1% 1% 1%;'>
 												<a href="/about.php">
 													<img class="responsive-img" src="/webimages/About.png" />

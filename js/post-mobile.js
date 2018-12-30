@@ -18,11 +18,25 @@ function subscribe()
 
 
 			});
+			window.subscribedrop.close();
+			 M.toast({html: 'Thanks for subscribing'})
+			
+			
+			}
 
 			
 			
 			
-			}
+function isvalidemail(email) {
+
+
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+  {
+    return (true)
+  }
+ 
+    return (false)
+}
 			function loadarticle(id) {
 				$('.sidenav').sidenav('close');
 				$('#articleentry.navbaritem-selected').removeClass().addClass("navbaritem");
