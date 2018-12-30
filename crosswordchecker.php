@@ -11,8 +11,7 @@ code to get hash
 php -r "echo md5(strtolower('  <answer> '));"
 
 */
-if(md5($ans)=="c99f7ca5af7626d14dca3516559f42a6")
-
+if(md5($ans)=="4a49e34155a3da15ccbb17fd411e205c")
 {echo "correct";}
 else{
 echo "wrong";

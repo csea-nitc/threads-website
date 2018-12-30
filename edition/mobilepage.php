@@ -359,7 +359,25 @@ $cureditrow=$curedit->fetch_assoc();
 					inDuration: 150
 				});
 window["edfullname"]="<?php echo $curname; ?>"+" "+"<?php echo $curyear; ?>";
+
+
+// If article id is , loads it else load first article
+// https://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
+var url = new URL(window.location.href);
+var artid = url.searchParams.get("aid");
+
+
+if(artid==null){
 				initpage(<?php echo $cureditrow['id']; ?>, -11, true, "<?php echo $curname; ?>", "<?php echo $curyear; ?>");
+			
+			
+			}
+			else{
+initpage(<?php echo $cureditrow['id']; ?>, artid, false, "<?php echo $curname; ?>", "<?php echo $curyear; ?>");
+			
+			}
+			
+			
 			});
 		</script>
 	</body>

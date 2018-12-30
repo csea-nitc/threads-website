@@ -57,7 +57,7 @@ starty:13
 					answer: "XXXXXXXXXX",
 						 
 					position: 16,
-					orientation: "across",
+					orientation: "across",	
 					startx: 1,
 					starty: 18
 				}

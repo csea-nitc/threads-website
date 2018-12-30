@@ -25,8 +25,29 @@ function subscribe()
 			}
 
 			
-			
-			
+		//function to add parameter to url 	
+	function updateURLParameter(url, param, paramVal){
+    var newAdditionalURL = "";
+   url1=url.split("#")[0];
+   //alert(url1[1]);
+    var tempArray = url1.split("?");
+    var baseURL = tempArray[0];
+    var additionalURL = tempArray[1];
+    var temp = "";
+    if (additionalURL) {
+        tempArray = additionalURL.split("&");
+        for (var i=0; i<tempArray.length; i++){
+            if(tempArray[i].split('=')[0] != param){
+                newAdditionalURL += temp + tempArray[i];
+                temp = "&";
+            }
+        }
+    }
+
+    var rows_txt = temp + "" + param + "=" + paramVal;
+    return baseURL + "?" + newAdditionalURL + rows_txt;
+}
+		
 function isvalidemail(email) {
 
 
@@ -103,11 +124,13 @@ function isvalidemail(email) {
 					
 				 
  
-					console.log("Send");
+					 
 					//	$('#authorbio').append(div);
 				});
 				$('#article-box').show();
 				$('#articles').hide();
+				//alert(updateURLParameter(window.location.href, "aid", ""+id));
+				window.history.replaceState('', '', updateURLParameter(window.location.href, "aid", ""+id));
 
 
 			}
