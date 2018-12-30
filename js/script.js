@@ -5,31 +5,31 @@
 		// two entries: an across entry and a down entry
 		var puzzleData = [
 			 	{
-					clue: "Human:Eat::Computer:?",
-					answer: "ccccc",
-					position: 2,
-					orientation: "across",
-					startx: 16,
-					starty: 2
-				},
-			 	{
-					clue: "Touching the intangible is hard, where ever you are.",
-					answer: "cccccccc",
-					position: 4,
+					clue: "Santa Claus and your browser love this (7)",
+					answer: "XXXXOOO",
+					position: 5,
 					orientation: "across",
 					startx: 10,
-					starty: 5
+					starty: 4
+				},
+			 	{
+					clue: " Richard Stallman is vegan in his software consumption (4, 6)",
+					answer: "XXXXXXXXXX",
+					position: 8,
+					orientation: "across",
+					startx: 4,
+					starty: 6
 				},
 				
 
 
 {
-clue: '"Terminal is too complicated,just give me everything in one GUI"',
-answer:'ccc',
-position:5,
-orientation:"down",
-startx:6,
-starty:7
+clue: '"Elon Musk believes AI will single us out in the future (11)"',
+answer:'XXXXXXXXXXX',
+position:10,
+orientation:"across",
+startx:4,
+starty:13
 
 
 
@@ -37,90 +37,91 @@ starty:7
 ,
 
 {
-					clue: "When you don't need some lines of code but don't wish to remove them..",
-					answer: "ccccccc",
-					position: 6,
+					clue: "The two forces of version control (4, 3, 4)",
+					answer: "XXXXXXXXXXX",
+					position: 11,
 					orientation: "across",
-					startx: 14,
-					starty: 7
+					startx: 3,
+					starty: 15
 				},
 				{
-					clue: "for i......: for j......: do something; ",
-					answer: "cccccc",
-					position: 7,
+					clue: "A way to boot a computer is what you call your ex (4)",
+					answer: "XXXX",
+					position: 15,
 					orientation: "across",
-					startx: 5,
-					starty: 9
+					startx: 11,
+					starty: 17
 				}
 ,{
-					clue: " One of the several species of fishes of the genus Salvelinus. Also a data type.",
-					answer: "cccc",
-					position: 10,
+					clue: "If death could be a colour (4, 6)",
+					answer: "XXXXXXXXXX",
+						 
+					position: 16,
 					orientation: "across",
-					startx: 10,
-					starty: 11
+					startx: 1,
+					starty: 18
 				}
 				
 				,
 {
-					clue: "How to get out of while(1) ",
-					answer: "ccccc",
-					position: 12,
-					orientation: "across",
+					clue: "Patterns of letters that help you remember assembly code (9)",
+					answer: "XXXXXXXXX",
+					position: 1,
+					orientation: "down",
 					startx: 7,
-					starty: 14
+					starty: 1
 				}
 				,
 {
-					clue: "... << 'This isn't left shift' 	 ",
+					clue: "Two roads diverged in a project development wood (4)",
 					answer: "cccc",
-					position: 14,
-					orientation: "across",
-					startx: 4,
-					starty: 16
+					position:2,
+					orientation: "down",
+					startx: 13,
+					starty: 1
 				},
 {
-					clue: "... and then define.",
-					answer: "ccccccc",
-					position: 15,
-					orientation: "across",
-					startx: 1,
-					starty: 18
+					clue: "An organism that turns caffeine into software (10)",
+					answer: "XXXXXXXXXX",
+					position: 3,
+					orientation: "down",
+					startx: 11,
+					starty: 2
 				},
 
 				{
-					clue: "There are 10 types of people in the world...",
-					answer: "cccccc",
-					position: 1,
-					orientation: "down",
-					startx: 12,
-					starty: 1
-				},
-
-{
-					clue: "In short, plus plus.",
-					answer: "ccccccccc",
-					position: 2,
+					clue: "All you can do with lists (4)",
+					answer: "XXXX",
+					position: 4,
 					orientation: "down",
 					startx: 16,
 					starty: 2
 				},
 
 {
-					clue: "Procedure is key to do work. 12 tribes on your keyboard.",
-					answer: "cccccccc",
-					position: 3,
+					clue: "A thing you do with your long-time partner and your code (6)",
+					answer: "XXXXXX",
+					position: 6,
 					orientation: "down",
-					startx: 8,
+					startx: 4,
+					starty: 5
+				},
+
+{
+					clue: "The three finger salute (7, 3, 6) ",
+					answer: "XXXXXXXXXXXXXXXX",
+					position: 7,
+					orientation: "down",
+					startx: 9,
 					starty: 5
 				},
 {
-					clue: "3499 = DAB (on them)",
-					answer: "ccccccccccc",
-					position: 4,
+					clue: "If your content can be edited in a form closely resembling the finished product, then... (7)",
+					answer: "XXXXXXX",
+					position: 9,
 					orientation: "down",
-					startx: 10,
-					starty: 5
+					startx: 14,
+					starty: 8
 				},
 /*
 {
@@ -132,49 +133,31 @@ starty:7
 					starty: 7
 				},*/
 {
-					clue: "4 bytes is one...",
-					answer: "cccc",
-					position: 8,
+					clue: "Green dude likes froyos, eclairs and now Oreos (7)",
+					answer: "XXXXXXX",
+					position: 12,
 					orientation: "down",
-					startx: 13,
-					starty: 9 	
+					startx: 7,
+					starty: 15 	
 				},
 
 {
-					clue: "All nodes say 'Hi' to each other ",
-					answer: "ccccccc",
-					position: 9,
-					orientation: "across",
-					startx: 16,
-					starty: 9
+					clue: " It goes on and on and on and on (4)",
+					answer: "XXXX",
+					position: 13,
+					orientation: "down",
+					startx: 12,
+					starty: 15
 
 			},
 
 {
-					clue: "\"Can't get out of this block because I'm a ...\"",
-					answer: "ccccc",
-					position: 11,
+					clue: "A red hat for your PC (6)",
+					answer: "XXXXXX",
+					position: 14,
 					orientation: "down",
 					startx: 4,
-					starty: 14
-				},
-
-{
-					clue: " Atoms to the data.(Suarez, not again.) ",
-					answer: "ccc",
-					position: 12,
-					orientation: "down",
-					startx: 7,
-					starty: 14
-				},
-
-{
-					clue: "Don't forget to return 0 in the end. ",
-					answer: "cccc",
-					position: 13,
-					orientation: "down",
-					startx: 2,
-					starty: 16
+					starty: 17
 				}
 			] 
 	

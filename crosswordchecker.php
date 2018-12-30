@@ -3,7 +3,15 @@ $ans=$_POST["ans"];
 
 $ans=strtolower($ans);
 //add answer here 
-if(md5($ans)=="85d019e7fcd881ca75d586e23cdd84b5")
+
+/*
+
+code to get hash 
+
+php -r "echo md5(strtolower('  <answer> '));"
+
+*/
+if(md5($ans)=="c99f7ca5af7626d14dca3516559f42a6")
 
 {echo "correct";}
 else{
