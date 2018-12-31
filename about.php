@@ -143,8 +143,8 @@ $("#bottomitem").show();
                         </div>
 
                         <div style="flex-basis: 50%; padding:0.5rem;">
-                        <a href="http://assoc.cse.nitc.ac.in/">
-                            <img src="/webimages/CSEA.png" />
+                        <a href="http://cse.nitc.ac.in/">
+                            <img src="/webimages/CSED.png" />
                         </a>
                         </div>
 
