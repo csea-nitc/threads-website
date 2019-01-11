@@ -8,7 +8,7 @@
     ?>
     
     <h1>Admin panel</h1>
- 
+ <a href="downloadsubscribers.php" download="subscriberlist.csv" >Download Subscribers List </a>
     <table>
      <tr> <th>Edition</th><th>EDIT?</th><th>DELETE?</th><th> VISIBILITY</th></tr>
    
