@@ -1,5 +1,5 @@
 ### The official repository of Threads - the official newsletter of CSED, NITC
-<threads.nitc.ac.in>
+[threads.nitc.ac.in](https://threads.nitc.ac.in/)
 
 # Setting up a local copy of the website
 
